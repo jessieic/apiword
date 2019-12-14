@@ -1,0 +1,1022 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <title>mdToHtml</title>
+            <link rel="stylesheet" media="all" href="./css/application.css">
+            <link rel="stylesheet" media="all" href="./css/print.css">
+    </head>
+    <body>
+
+        <div style="position:fixed; z-index:1;"><h3><a href="./index.html"></a></h3></div>
+        <div style="width:1000px;  margin-left: auto; margin-right: auto; margin-top: 80px; margin-bottom: 80px" class="wiki issue-realtime-trigger-pulse">
+                            <h2><strong>1.  考核系统-&gt;考试-&gt;试卷</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/Exam/long_paper.html.twig</li>
+                                            <li>路由常量： examination_sytem_exam_paper </li>
+                    <li>测试路由： /examination/paper/13 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;lpaper&quot;: [
+        {
+            &quot;id&quot;: 60,
+            &quot;question_score&quot;: 20,
+            &quot;question_title&quot;: &quot;\u7ecf\u6d4e\u4fdd\u6301\u4e2d\u9ad8\u901f\u589e\u957f,\uff0c\u5728\u4e16\u754c\u4e3b\u8981\u56fd\u5bb6\u4e2d\u540d\u5217\u524d\u8305\uff0c\u56fd\u5185\u751f\u4ea7\u603b\u503c\u4ece\u4e94\u5341\u56db\u4e07\u4ebf\u5143\u589e\u957f\u5230\u516b\u5341\u4e07\u4ebf\u5143\uff0c\u7a33\u5c45\u4e16\u754c\u7b2c\u4e09\u3002&quot;,
+            &quot;question_option&quot;: &quot;{\&quot;optionA\&quot;:\&quot;\\u586b\\u7a7a1\&quot;,\&quot;optionB\&quot;:\&quot;\\u586b\\u7a7a2\&quot;}&quot;,
+            &quot;question_type_name&quot;: &quot;\u5224\u65ad&quot;,
+            &quot;uniqidName&quot;: null,
+            &quot;ClientOriginalName&quot;: null,
+            &quot;code&quot;: &quot;judge&quot;,
+            &quot;opt&quot;: {
+                &quot;A&quot;: &quot;\u6b63\u786e&quot;,
+                &quot;B&quot;: &quot;\u9519\u8bef&quot;
+            }
+        }
+    ],
+    &quot;exam&quot;: [
+        {
+            &quot;id&quot;: 18,
+            &quot;exam_title&quot;: &quot;\u957f\u8bd5\u5377002&quot;,
+            &quot;exstarttime&quot;: &quot;2018-11-01 08:55&quot;,
+            &quot;exdeadline&quot;: &quot;2019-01-01 17:45&quot;,
+            &quot;announce_time&quot;: &quot;2019-03-16 11:55&quot;,
+            &quot;info&quot;: &quot;\u957f\u8bd5\u5377002&quot;,
+            &quot;status&quot;: &quot;\u5f00\u542f&quot;,
+            &quot;exmlimit&quot;: 2160000,
+            &quot;sum_score&quot;: 80,
+            &quot;pass_score&quot;: 60,
+            &quot;username&quot;: null,
+            &quot;disp_form&quot;: &quot;\u957f\u8bd5\u5377&quot;,
+            &quot;disp_order&quot;: &quot;\u539f\u59cb\u987a\u5e8f&quot;,
+            &quot;createtime&quot;: &quot;2018-10-31 17:46:33&quot;,
+            &quot;title&quot;: &quot;\u8bd5\u5377\u7c7b\u578b001&quot;,
+            &quot;limited_time&quot;: 0,
+            &quot;StartTime&quot;: 1541747759,
+            &quot;StartTimeForm&quot;: &quot;2018-11-09 15:15&quot;,
+            &quot;EndTime&quot;: 1543907759,
+            &quot;EndTimeForm&quot;: &quot;2018-12-04 15:15&quot;
+        }
+    ],
+    &quot;exstuId&quot;: &quot;13&quot;,
+    &quot;sum&quot;: 6
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exam_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exstarttime</td>
+                                    <td align="left">int</td>
+                                    <td align="left">开考时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exdeadline</td>
+                                    <td align="left">int</td>
+                                    <td align="left">考试截止时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">announce_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">公布成绩时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">info</td>
+                                    <td align="left">string</td>
+                                    <td align="left">备注</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exmlimit</td>
+                                    <td align="left">int</td>
+                                    <td align="left">考试时长 分钟单位</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sum_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">卷面分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pass_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">及格分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">username</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">disp_form</td>
+                                    <td align="left">int</td>
+                                    <td align="left">显示形式{1:长试卷;2:短试卷}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">disp_order</td>
+                                    <td align="left">int</td>
+                                    <td align="left">组卷方式（试题排列顺序{1:原始;2:随机}）</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">createtime</td>
+                                    <td align="left">int</td>
+                                    <td align="left">创建时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">limited_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">限制交卷时间 分钟单位</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">StartTime</td>
+                                    <td align="left">string</td>
+                                    <td align="left">本次考试开始时间戳</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">StartTimeForm</td>
+                                    <td align="left">string</td>
+                                    <td align="left">本次考试开始标准化时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">EndTime</td>
+                                    <td align="left">string</td>
+                                    <td align="left">本次考试结束时间戳</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">EndTimeForm</td>
+                                    <td align="left">string</td>
+                                    <td align="left">本次考试结束标准化时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">A</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">B</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left"> 题目分值</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_option</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题选项</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_type_name</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题型名称 </td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">uniqidName</td>
+                                    <td align="left">string</td>
+                                    <td align="left">压缩包名,存储路径查brochures_directory</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ClientOriginalName</td>
+                                    <td align="left">string</td>
+                                    <td align="left">压缩包原始名</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">code</td>
+                                    <td align="left">string</td>
+                                    <td align="left">代码</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exstuId</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sum</td>
+                                    <td align="left">string</td>
+                                    <td align="left">总数</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>2.  考核系统-&gt;考试-&gt;交卷</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： examination_sytem_Answer_Paper </li>
+                    <li>测试路由： /examination/answer </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;submit_method&quot;: &quot;1&quot;,
+        &quot;60&quot;: [
+            &quot;B&quot;
+        ],
+        &quot;61&quot;: [
+            &quot;A&quot;
+        ],
+        &quot;62&quot;: [
+            &quot;A&quot;,
+            &quot;B&quot;,
+            &quot;C&quot;,
+            &quot;D&quot;
+        ],
+        &quot;63&quot;: [
+            &quot;&quot;
+        ],
+        &quot;64&quot;: [
+            &quot;\u6df1\u523b\u8ba4\u8bc6\u515a\u9762\u4e34\u7684\uff08 \uff09\u7684\u5c16\u9510\u6027\u548c\u4e25\u5cfb\u6027\uff0c\u575a\u6301\u95ee\u9898\u5bfc\u5411\uff0c\u4fdd\u6301\u6218\u7565\u5b9a\u529b\uff0c\u63a8\u52a8\u5168\u9762\u4ece\u4e25\u6cbb\u515a\u5411\u7eb5\u6df1\u53d1\u5c55\u3002\r\n&quot;
+        ],
+        &quot;71&quot;: {
+            &quot;optionA&quot;: &quot;\u5f00\u8003&quot;,
+            &quot;optionB&quot;: &quot;\u90fd\u662f&quot;
+        },
+        &quot;exstuId&quot;: &quot;13&quot;,
+        &quot;_token&quot;: &quot;Ku5wFmoU8mF0vBWGyBH5ygxkM7oZjDAx3y-skxIz04Q&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">optionA</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项A</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionB</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项B</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">0</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">1</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">2</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">3</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">submit_method</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exstuId</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>3.  考核系统-&gt;考试-&gt;成绩单</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/Answer/answer_index.html.twig</li>
+                                            <li>路由常量： examination_sytem_paper_score </li>
+                    <li>测试路由： /examination/stu/score/13 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;method&quot;: &quot;score&quot;,
+    &quot;score&quot;: [
+        {
+            &quot;type_id&quot;: 1,
+            &quot;qnum&quot;: 1,
+            &quot;cornum&quot;: 0,
+            &quot;wronum&quot;: &quot;1&quot;,
+            &quot;score&quot;: 0,
+            &quot;type_name&quot;: &quot;\u5355\u9009&quot;
+        }
+    ],
+    &quot;exam&quot;: [
+        {
+            &quot;if_take&quot;: 1,
+            &quot;if_submit&quot;: &quot;\u81ea\u4e3b&quot;,
+            &quot;id&quot;: 18,
+            &quot;exam_title&quot;: &quot;\u957f\u8bd5\u5377002&quot;,
+            &quot;exstarttime&quot;: &quot;2018-11-01 08:55&quot;,
+            &quot;exdeadline&quot;: &quot;2019-01-01 17:45&quot;,
+            &quot;announce_time&quot;: &quot;2019-03-16 11:55&quot;,
+            &quot;info&quot;: &quot;\u957f\u8bd5\u5377002&quot;,
+            &quot;status&quot;: &quot;\u5f00\u542f&quot;,
+            &quot;exmlimit&quot;: 36000,
+            &quot;sum_score&quot;: 80,
+            &quot;pass_score&quot;: 60,
+            &quot;username&quot;: null,
+            &quot;disp_form&quot;: &quot;\u957f\u8bd5\u5377&quot;,
+            &quot;disp_order&quot;: &quot;\u539f\u59cb\u987a\u5e8f&quot;,
+            &quot;createtime&quot;: &quot;2018-10-31 17:46:33&quot;,
+            &quot;title&quot;: &quot;\u8bd5\u5377\u7c7b\u578b001&quot;,
+            &quot;used_time&quot;: &quot;44\u52069\u79d2&quot;,
+            &quot;user&quot;: &quot;usertest&quot;,
+            &quot;announce_answer_flag&quot;: 1,
+            &quot;testScore&quot;: 40,
+            &quot;if_finish&quot;: true
+        }
+    ],
+    &quot;answerq&quot;: [
+        {
+            &quot;id&quot;: 60,
+            &quot;question_title&quot;: &quot;\u7ecf\u6d4e\u4fdd\u6301\u4e2d\u9ad8\u901f\u589e\u957f,\uff0c\u5728\u4e16\u754c\u4e3b\u8981\u56fd\u5bb6\u4e2d\u540d\u5217\u524d\u8305\uff0c\u56fd\u5185\u751f\u4ea7\u603b\u503c\u4ece\u4e94\u5341\u56db\u4e07\u4ebf\u5143\u589e\u957f\u5230\u516b\u5341\u4e07\u4ebf\u5143\uff0c\u7a33\u5c45\u4e16\u754c\u7b2c\u4e09\u3002&quot;,
+            &quot;question_option&quot;: &quot;{\&quot;optionA\&quot;:\&quot;\\u6b63\\u786e\&quot;,\&quot;optionB\&quot;:\&quot;\\u9519\\u8bef\&quot;,\&quot;optionC\&quot;:null,\&quot;optionD\&quot;:null,\&quot;optionE\&quot;:null,\&quot;optionF\&quot;:null}&quot;,
+            &quot;question_type_name&quot;: &quot;\u5224\u65ad&quot;,
+            &quot;code&quot;: &quot;judge&quot;,
+            &quot;myanswer&quot;: &quot;B&quot;,
+            &quot;question_answer&quot;: &quot;B&quot;,
+            &quot;question_analysis&quot;: &quot;\u7ecf\u6d4e\u4fdd\u6301\u4e2d\u9ad8\u901f\u589e\u957f\uff0c\u5728\u4e16\u754c\u4e3b\u8981\u56fd\u5bb6\u4e2d\u540d\u5217\u524d\u8305\uff0c\u56fd\u5185\u751f\u4ea7\u603b\u503c\u4ece\u4e94\u5341\u56db\u4e07\u4ebf\u5143\u589e\u957f\u5230\u516b\u5341\u4e07\u4ebf\u5143\uff0c\u7a33\u5c45\u4e16\u754c\u7b2c\u4e09\u3002&quot;,
+            &quot;score&quot;: 20,
+            &quot;ifture&quot;: 1,
+            &quot;uniqidName&quot;: null,
+            &quot;ClientOriginalName&quot;: null,
+            &quot;opt&quot;: {
+                &quot;A&quot;: &quot;\u6b63\u786e&quot;,
+                &quot;B&quot;: &quot;\u9519\u8bef&quot;
+            }
+        }
+    ],
+    &quot;sum&quot;: 6
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">A</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">B</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_option</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题选项</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_type_name</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题型名称 </td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">code</td>
+                                    <td align="left">string</td>
+                                    <td align="left">代码</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">myanswer</td>
+                                    <td align="left">string</td>
+                                    <td align="left">学生答案</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_answer</td>
+                                    <td align="left">string</td>
+                                    <td align="left"> 答案</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">question_analysis</td>
+                                    <td align="left">string</td>
+                                    <td align="left"> 解析</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">score</td>
+                                    <td align="left">int</td>
+                                    <td align="left"> 得分</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ifture</td>
+                                    <td align="left">int</td>
+                                    <td align="left"> 判卷{1:对;2:错;3:需要人工阅卷}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">uniqidName</td>
+                                    <td align="left">string</td>
+                                    <td align="left">压缩包名,存储路径查brochures_directory</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ClientOriginalName</td>
+                                    <td align="left">string</td>
+                                    <td align="left">压缩包原始名</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">if_take</td>
+                                    <td align="left">int</td>
+                                    <td align="left">是否参加考试{1:是;2:否}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">if_submit</td>
+                                    <td align="left">int</td>
+                                    <td align="left">提交试卷方式{1:自主;2:未提交;3:系统}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exam_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exstarttime</td>
+                                    <td align="left">int</td>
+                                    <td align="left">开考时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exdeadline</td>
+                                    <td align="left">int</td>
+                                    <td align="left">考试截止时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">announce_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">公布成绩时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">info</td>
+                                    <td align="left">string</td>
+                                    <td align="left">备注</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exmlimit</td>
+                                    <td align="left">int</td>
+                                    <td align="left">考试时长 分钟单位</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sum_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">卷面分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pass_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">及格分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">username</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">disp_form</td>
+                                    <td align="left">int</td>
+                                    <td align="left">显示形式{1:长试卷;2:短试卷}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">disp_order</td>
+                                    <td align="left">int</td>
+                                    <td align="left">组卷方式（试题排列顺序{1:原始;2:随机}）</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">createtime</td>
+                                    <td align="left">int</td>
+                                    <td align="left">创建时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">used_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">已用时间(s)</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">user</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">announce_answer_flag</td>
+                                    <td align="left">int</td>
+                                    <td align="left">答案公布（1 公布 2不公布）</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">testScore</td>
+                                    <td align="left">string</td>
+                                    <td align="left">得分</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">if_finish</td>
+                                    <td align="left">string</td>
+                                    <td align="left">批阅(true完毕false没有批阅)</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">type_id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表ExamQuestionType</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">qnum</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题目数量</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">cornum</td>
+                                    <td align="left">string</td>
+                                    <td align="left">正确题目数量</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">wronum</td>
+                                    <td align="left">string</td>
+                                    <td align="left">错误题目数量</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">type_name</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题型</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">method</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sum</td>
+                                    <td align="left">string</td>
+                                    <td align="left">总数</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>4.  考核系统-&gt;考试-&gt;首页</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/Default/index.html.twig</li>
+                                            <li>路由常量： examination_sytem_web_homepage </li>
+                    <li>测试路由： /examination/index </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;UntestList&quot;: [
+        {
+            &quot;id&quot;: 2,
+            &quot;exam_title&quot;: &quot;\u8003\u8bd5\u540d\u79f02-\u968f\u673a\u6392\u5e8f&quot;,
+            &quot;exstarttime&quot;: &quot;2018-10-15 14:00&quot;,
+            &quot;exdeadline&quot;: &quot;2018-11-30 19:00&quot;,
+            &quot;announce_time&quot;: &quot;2018-12-01 23:00&quot;,
+            &quot;info&quot;: &quot;\u8003\u8bd5\u540d\u79f02-\u968f\u673a\u6392\u5e8f&quot;,
+            &quot;exmlimit&quot;: 360000,
+            &quot;sum_score&quot;: 20,
+            &quot;pass_score&quot;: 10,
+            &quot;exam_logo&quot;: &quot;\/image\/paper-default.png&quot;
+        }
+    ],
+    &quot;UntestNum&quot;: 7,
+    &quot;TestedExamSum&quot;: 5
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exam_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exstarttime</td>
+                                    <td align="left">int</td>
+                                    <td align="left">开考时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exdeadline</td>
+                                    <td align="left">int</td>
+                                    <td align="left">考试截止时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">announce_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">公布成绩时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">info</td>
+                                    <td align="left">string</td>
+                                    <td align="left">备注</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exmlimit</td>
+                                    <td align="left">int</td>
+                                    <td align="left">考试时长 分钟单位</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sum_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">卷面分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pass_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">及格分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exam_logo</td>
+                                    <td align="left">string</td>
+                                    <td align="left">图片</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">UntestNum</td>
+                                    <td align="left">int</td>
+                                    <td align="left">未考试卷数量</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">TestedExamSum</td>
+                                    <td align="left">int</td>
+                                    <td align="left">已考试卷数量</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>5.  考核系统-&gt;考试-&gt;待考试列表分页接口</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： examination_sytem_TestedExam_List </li>
+                    <li>测试路由： /examination/testedexam/list </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;registration_type&quot;: &quot;0&quot;,
+    &quot;pageSize&quot;: &quot;10&quot;,
+    &quot;pageIndex&quot;: &quot;0&quot;
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">registration_type</td>
+                                    <td align="left">query</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageSize</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">每页数据条数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageIndex</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">当前页起始数据</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;rowDatas&quot;: [
+        {
+            &quot;id&quot;: 13,
+            &quot;exam_title&quot;: &quot;\u957f\u8bd5\u5377002&quot;,
+            &quot;tested_start_time&quot;: &quot;2018-11-09 15:15:59&quot;,
+            &quot;if_submit&quot;: &quot;\u81ea\u4e3b&quot;,
+            &quot;used_time&quot;: &quot;44\u52069\u79d2&quot;,
+            &quot;ifcheck&quot;: 1,
+            &quot;score&quot;: 40,
+            &quot;pass_score&quot;: 60,
+            &quot;announce_time&quot;: &quot;2019-03-16 11:55&quot;,
+            &quot;exam_logo&quot;: &quot;\/image\/paper-default.png&quot;,
+            &quot;if_take&quot;: 1,
+            &quot;button&quot;: [
+                {
+                    &quot;but_router&quot;: &quot;\/examination\/stu\/score\/13&quot;,
+                    &quot;but_method&quot;: &quot;href&quot;,
+                    &quot;but_title&quot;: &quot;\u6210\u7ee9&quot;
+                },
+                {
+                    &quot;but_router&quot;: &quot;\/examination\/stu\/analysis\/13&quot;,
+                    &quot;but_method&quot;: &quot;href&quot;,
+                    &quot;but_title&quot;: &quot;\u9519\u9898&quot;
+                }
+            ]
+        }
+    ],
+    &quot;dataLength&quot;: 5,
+    &quot;pageIndex&quot;: &quot;0&quot;,
+    &quot;pageSize&quot;: &quot;10&quot;,
+    &quot;errcode&quot;: 0
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">but_router</td>
+                                    <td align="left">string</td>
+                                    <td align="left">按钮路由</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">but_method</td>
+                                    <td align="left">string</td>
+                                    <td align="left">按钮类型</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">but_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">按钮名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exam_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">tested_start_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">开始答题时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">if_submit</td>
+                                    <td align="left">int</td>
+                                    <td align="left">提交试卷方式{1:自主;2:未提交;3:系统}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">used_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">已用时间(s)</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ifcheck</td>
+                                    <td align="left">int</td>
+                                    <td align="left"> 是否有待批阅题目{1:无(默认);2:有}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">score</td>
+                                    <td align="left">int</td>
+                                    <td align="left"> 得分</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pass_score</td>
+                                    <td align="left">int</td>
+                                    <td align="left">及格分数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">announce_time</td>
+                                    <td align="left">int</td>
+                                    <td align="left">公布成绩时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">exam_logo</td>
+                                    <td align="left">string</td>
+                                    <td align="left">图片</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">if_take</td>
+                                    <td align="left">int</td>
+                                    <td align="left">是否参加考试{1:是;2:否}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">dataLength</td>
+                                    <td align="left">int</td>
+                                    <td align="left">尾页</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageIndex</td>
+                                    <td align="left">int</td>
+                                    <td align="left">当前页起始数据</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageSize</td>
+                                    <td align="left">int</td>
+                                    <td align="left">每页数据条数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">errcode</td>
+                                    <td align="left">int</td>
+                                    <td align="left">错误代码.0:正确</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                </body>
+</html>

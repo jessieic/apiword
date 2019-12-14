@@ -1,0 +1,556 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <title>mdToHtml</title>
+            <link rel="stylesheet" media="all" href="./css/application.css">
+            <link rel="stylesheet" media="all" href="./css/print.css">
+    </head>
+    <body>
+
+        <div style="position:fixed; z-index:1;"><h3><a href="./index.html"></a></h3></div>
+        <div style="width:1000px;  margin-left: auto; margin-right: auto; margin-top: 80px; margin-bottom: 80px" class="wiki issue-realtime-trigger-pulse">
+                            <h2><strong>1.  后台-&gt;题库分类-&gt;新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestionBank/bank_new.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_CreateView </li>
+                    <li>测试路由： /admin/bank/createview </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>2.  后台-&gt;题库分类-&gt;新建api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_Create </li>
+                    <li>测试路由： /admin/bank/create </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;title&quot;: &quot;\u9ad8\u4e09\u4e00\u73ed\u7ea7XXX&quot;,
+        &quot;status&quot;: &quot;1&quot;,
+        &quot;info&quot;: &quot;\u9ad8\u4e09\u4e00\u73ed\u7ea7XXX1&quot;,
+        &quot;_token&quot;: &quot;Od1IiteqDzZa-tFhHKTrBhGf4b95MJnWvP-VuOfpqs8&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">title</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">组名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">info</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">备注</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>3.  后台-&gt;题库分类-&gt;删除api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_Delect </li>
+                    <li>测试路由： /admin/bank/delete/10 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>4.  后台-&gt;题库分类-&gt;编辑页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestionBank/bank_edit.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_EditView </li>
+                    <li>测试路由： /admin/bank/editview/9 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>5.  后台-&gt;题库分类-&gt;编辑api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_Edit </li>
+                    <li>测试路由： /admin/bank/edit </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;title&quot;: &quot;\u9ad8\u4e09\u4e00\u73ed\u7ea7123&quot;,
+        &quot;status&quot;: &quot;1&quot;,
+        &quot;info&quot;: &quot;\u9ad8\u4e09\u4e00\u73ed&quot;,
+        &quot;id&quot;: &quot;9&quot;,
+        &quot;_token&quot;: &quot;Od1IiteqDzZa-tFhHKTrBhGf4b95MJnWvP-VuOfpqs8&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">title</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">组名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">info</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">备注</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>6.  后台-&gt;题库分类-&gt;首页列表</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_IndexList </li>
+                    <li>测试路由： /admin/bank/indexlist </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;title&quot;: &quot;&quot;,
+    &quot;pageSize&quot;: &quot;15&quot;,
+    &quot;pageIndex&quot;: &quot;0&quot;
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">title</td>
+                                    <td align="left">query</td>
+                                    <td align="left">string</td>
+                                    <td align="left">组名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageSize</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">每页数据条数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageIndex</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">当前页起始数据</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;rowDatas&quot;: [
+        {
+            &quot;id&quot;: 9,
+            &quot;title&quot;: &quot;\u9ad8\u4e09\u4e00\u73ed\u7ea7123&quot;,
+            &quot;status&quot;: &quot;\u5f00\u542f&quot;,
+            &quot;createtime&quot;: &quot;2018-11-21 14:00:57&quot;,
+            &quot;username&quot;: null,
+            &quot;updatetime&quot;: &quot;2018-11-26 10:21&quot;,
+            &quot;button&quot;: [
+                {
+                    &quot;but_router&quot;: &quot;\/admin\/bank\/dlview\/9&quot;,
+                    &quot;but_method&quot;: &quot;modal&quot;,
+                    &quot;but_title&quot;: &quot;\u4e0b\u8f7d&quot;,
+                    &quot;class&quot;: &quot;td-download td-download-hook&quot;,
+                    &quot;data_target&quot;: &quot;#editorModal&quot;,
+                    &quot;onclick&quot;: &quot;showLoading();&quot;
+                },
+                {
+                    &quot;but_router&quot;: &quot;\/admin\/bank\/editview\/9&quot;,
+                    &quot;but_method&quot;: &quot;href&quot;,
+                    &quot;but_title&quot;: &quot;\u7f16\u8f91&quot;,
+                    &quot;class&quot;: &quot;td-modify td-modify-hook&quot;,
+                    &quot;data_target&quot;: null,
+                    &quot;onclick&quot;: null
+                },
+                {
+                    &quot;but_router&quot;: &quot;\/admin\/bank\/delete\/9&quot;,
+                    &quot;but_method&quot;: &quot;api&quot;,
+                    &quot;but_title&quot;: &quot;\u5220\u9664&quot;,
+                    &quot;class&quot;: &quot;td-delete td-delete-hook&quot;,
+                    &quot;data_target&quot;: null,
+                    &quot;onclick&quot;: &quot;singleDelete&quot;
+                }
+            ],
+            &quot;ques_num&quot;: 0,
+            &quot;if_del&quot;: 1
+        }
+    ],
+    &quot;dataLength&quot;: 6,
+    &quot;pageIndex&quot;: &quot;0&quot;,
+    &quot;pageSize&quot;: &quot;15&quot;,
+    &quot;errcode&quot;: 0
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">rowDatas</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">dataLength</td>
+                                    <td align="left">int</td>
+                                    <td align="left">尾页</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageIndex</td>
+                                    <td align="left">int</td>
+                                    <td align="left">当前页起始数据</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageSize</td>
+                                    <td align="left">int</td>
+                                    <td align="left">每页数据条数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">errcode</td>
+                                    <td align="left">int</td>
+                                    <td align="left">错误代码.0:正确</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>7.  后台-&gt;题库分类-&gt;首页</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestionBank/bank_index.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_IndexView </li>
+                    <li>测试路由： /admin/bank/indexview </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>8.  后台-&gt;题库分类-&gt;题库下载页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestionBank/bank_download.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_DView </li>
+                    <li>测试路由： /admin/bank/dlview/1 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>9.  后台-&gt;题库分类-&gt;下载题库</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Quesbank_DLoad </li>
+                    <li>测试路由： /admin/bank/dlapi </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;bank_id&quot;: &quot;1&quot;,
+        &quot;type_id&quot;: [
+            &quot;1&quot;
+        ],
+        &quot;_token&quot;: &quot;Od1IiteqDzZa-tFhHKTrBhGf4b95MJnWvP-VuOfpqs8&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">bank_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表exam_question_bank</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">type_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表ExamQuestionType</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                </body>
+</html>

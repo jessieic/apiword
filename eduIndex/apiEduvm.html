@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<pre>
+    <div style="color: #008800">
+        文档中黑色字体供前端调用接口
+        文档中红色字体是当前文档修改部分
+    </div>
+    数据返回格式json
+    数据接收格式json
+
+    数据返回格式：
+       失败：
+        [
+            {
+            "status": 400,    除去200其他的都是异常情况
+            "response": [ ]
+            "message":"提示信息"
+            }
+        ]
+       成功：
+          []
+       或者返回json数据
+        [
+            {
+            "status": 200,
+            "response": [ ]
+            "message":""
+            }
+        ]
+</pre>
+
+<pre>
+
+    【1】课程虚拟机接口：
+    接口路径：http://域名/mgmt/index/course/vm
+    命名空间：Topxia\MgmtBundle\Controller
+    所属文件：IndexController
+    接口名称：getCourseVmAction
+    获取方式：POST
+    接口参数： type:调用类型 必填（1 查询所有课程绑定的所有虚拟机    2 验证虚拟机绑定的课程）   vm_uid:虚拟机id（当type为2时必填）
+    返回结果：
+
+    type为1时返回数据格式：
+
+    {
+        "status": 200,
+        "response":
+        [
+            {
+                "sp_uid":"65820312559253acd4f2e80065591985",                              string                            课程下的情景id
+                "sp_name":"sub-name",                                                     string                            课程下的情景名称
+                "vm_uid":"052402"                                                         string                            虚拟机id
+                "sp_advice_time":"2.00"                                                   float                             情景学习时长是以小时为单位   没有数据默认返回0
+    <div style="color: red">
+                "course_id":"052402"                                                       string                            课程id
+                "course_name":"sesew"                                                      float                             课程名称
+    </div>
+            }
+        {
+                "sp_uid":"65820312559253acd4f2e80065591985",                              string                            课程下的情景id
+                "sp_name":"sub-name",                                                     string                            课程下的情景名称
+                "vm_uid":"052402"                                                         string                            虚拟机id
+                "sp_advice_time":"2.00"                                                   float                             情景学习时长是以小时为单位   没有数据默认返回0
+            <div style="color: red">
+                "course_id":"052402"                                                       string                            课程id
+                "course_name":"sesew"                                                      float                             课程名称
+            </div>
+        }
+        ]
+        "message":''
+    }
+     type为2时返回数据格式：
+     {
+        "status": 200,
+        "response":
+        {
+            "sp_uid":"65820312559253acd4f2e80065591985",                              string                            课程下的情景id
+            "vm_uid":"052402"                                                         string                            虚拟机id
+            "sp_advice_time":"2.00"                                                   float                             情景学习时长是以小时为单位   没有数据默认返回0
+         <div style="color: red">
+             "course_id":"052402"                                                     string                            课程id
+             "course_name":"sesew"                                                    float                             课程名称
+         </div>
+        }
+        "message":''
+    }
+
+    or
+
+    {
+        "status": 400,
+        "response":[]
+        "message":'提示信息'
+    }
+
+
+
+
+
+    【2】修改情景绑定虚拟机接口：
+        接口路径：http://域名/mgmt/index/course/setvm
+        命名空间：Topxia\MgmtBundle\Controller
+        所属文件：IndexController
+        接口名称：setSubProVmAction
+        获取方式：POST
+        接口参数： vm_uid:要修改的虚拟机id 必填   vm_new_uid:虚拟机新id  必填
+        返回结果：
+
+        {
+        "status": 200,
+        "response":[]
+        "message":''
+        }
+        or
+        {
+        "status": 400,
+        "response":[]
+        "message":'提示信息'
+        }
+
+
+
+</pre>
+</body>
+</html>

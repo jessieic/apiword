@@ -1,0 +1,36 @@
+
+    charset UTF-8;
+
+    access_log /var/log/nginx/log/industryMasterVueMerge.access.log ;
+    error_log /var/log/nginx/log/industryMasterVueMerge.error.log ;
+
+    root /var/www/industryApiMasterVueMerge/public;
+
+    # other project page
+    
+ 
+    location / {
+        index  index.html index.htm  ;
+
+    }
+
+    
+    location ^~ /api\.php {
+        index app.php;
+        try_files $uri @rewriteapp;
+    }
+
+    location @rewriteapp {
+        rewrite ^(.*)$ /api.php/$1 last;
+    }
+
+    location ~ ^/api\.php(/|$) {
+        fastcgi_pass   unix:/var/run/php5-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+        fastcgi_param HTTP_X-Sendfile-Type X-Accel-Redirect;
+        fastcgi_buffer_size 128k;
+        fastcgi_buffers 8 128k;
+    }
+    

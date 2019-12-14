@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<pre>
+    数据返回格式json
+    数据接收格式json
+
+    <div style="color:red">
+        特殊标明的数据返回格式object
+        特殊标明的数据接收格式object
+    </div>
+    数据返回格式:
+       失败:
+        [
+            {
+            "status": 400,    除去200其他的都是异常情况
+            "response": [ ]
+            }
+        ]
+       成功:
+          []
+       或者返回json数据
+        [
+            {
+            "status": 200,
+            "response": [ ]
+            }
+        ]
+</pre>
+
+<pre>
+ --------------------------------------------------------------------------processmake api------------------------------------------------------------------------------------------------------
+   <data class="info">
+        【1】:情景流程保存接口
+        接口路径: /api/1.0/workflow/project/{prj_uid}
+        接口名称:
+        提交方式:put
+        接口参数:prj_uid  课程id
+        <div style="color:red">
+            数据返回格式object
+            数据接收格式object
+        </div>
+        保存接口需要提交的字段在Request Payload
+        {
+        ["prj_uid"] :   string(32) "92510986359194fbf441b11011577521"
+        ["diagrams"] :
+        {
+        {
+        ["dia_uid"] :      string(32) "72448789259263298e6c572053737952"
+        ["pro_uid"] :      string(32) "92510986359194fbf441b11011577521"
+        ["activities"] :   活动和情景
+        {
+        {
+        ["act_uid"] :                           string  "2279968265919544013fea6058991318"              情景id
+        ["act_name"] :                          string  "活动标题"                                      情景名称
+        ["act_type"] :                          string  "SUB_PROCESS"                                   类型SUB_PROCESS(情景)
+        ["act_task_type"] :                     string  "USERTASK"                                      活动情景中的类型
+        ["act_loop_type"] :                     string  "EMPTY"                                         池子的类型（）
+        ["act_start_quantity"] :                string  "1"                                             开始量
+        ["act_completion_quantity"] :           string  "0"                                             完成量
+        ["bou_x"] :                             int        563                                          矩形的x
+        ["bou_y"] :                             int        259                                          矩形的y
+        ["bou_width"] :                         int        150                                          矩形的宽
+        ["bou_height"] :                        int        75                                           矩形的高
+        ["bou_container"] :                     string     "bpmnDiagram"                                容器
+        ["bou_element"] :                       string     "84186187159262508e65a59086967481"           元素id
+        ["_extended"] :
+        {
+        ["extendedType"] :                  string"SUB_PROCESS"                                     扩展类型字段
+        }
+        }
+        }
+        ["events"] :  开始结束事件
+        {
+        {
+        ["evn_uid"] :                           string(32) "9299011235924f92d34d616076681095"           事件id
+        ["evn_name"] :                          string(0) ""                                            事件名称
+        ["evn_type"] :                          string(3) "END"                                         事件类型
+        ["evn_marker"] :                        string(5) "EMPTY"                                       事件标示
+        ["evn_is_interrupting"] :               bool(true)                                              事件是否中断
+        ["evn_cancel_activity"] :               bool(false)                                             事件取消活动
+        ["evn_activity_ref"] :                  string                                                  事件活动参考
+        ["evn_wait_for_completion"] :           bool(false)                                             事件等待完成
+        ["evn_message"] :                       string(0) ""                                            事件消息
+        ["evn_operation_name"] :                string(0) ""                                            事件操作名
+        ["evn_operation_implementation_ref"] :  string(0)                                               事件操作实现裁判
+        ["evn_time_date"] :                     string(0)                                               事件日期
+        ["evn_time_cycle"] :                    string(0)                                               事件循环周期
+        ["evn_time_duration"] :                 string(0)                                               事件持续时间
+        ["evn_behavior"] :                      string(5) "THROW"                                       事件行为
+        ["bou_x"] :                             int(976)                                                矩形的x
+        ["bou_y"] :                             int        259                                          矩形的y
+        ["bou_width"] :                         int        150                                          矩形的宽
+        ["bou_height"] :                        int        75                                           矩形的高
+        ["bou_container"] :                     string     "bpmnDiagram"                                容器
+        ["bou_element"] :                       string     "84186187159262508e65a59086967481"           元素id
+        ["_extended"] :
+        {
+        ["extendedType"] :                  string"TASK"                                            扩展类型字段
+        }
+        }
+        }
+        ["flows"] :   关联信息
+        {
+        {
+        ["flo_uid"] :                            string  "158569335591ea3edd1d8f9062316600"             关联id
+        ["flo_type"] :                           string  "SEQUENCE"                                     关联类型
+        ["flo_name"] :                           string  " "                                            关联名称
+        ["flo_element_origin"] :                 string  "758880615591ea3ed89d266048612976"             起点id
+        ["flo_element_origin_type"] :            string  "bpmnGateway"                                  起点类型
+        ["flo_element_dest"] :                   string  "716491699591ea2ba616656053196638"             终点id
+        ["flo_element_dest_type"] :              string  "bpmnActivity"                                 终点类型
+        ["flo_is_inmediate"] :                   bool                                                   是否是直连
+        　　["flo_condition"] :                      string                                                 状态
+        ["flo_state"] :                                                                                 线上节点的坐标
+        {
+        {
+        ["x"] :                          int(377)
+        ["y"] :                          int(430)
+        }
+        {
+        ["x"] :                          int(377)
+        ["y"] :                          int(465)
+        }
+        {
+        ["x"] :                          int(428)
+        ["y"] :                          int(465)
+        }
+        {
+        ["x"] :                          int(428)
+        ["y"] :                          int(501)
+        }
+        }
+        ["flo_x1"] :                             int(377)                                               节点上x的坐标
+        　　["flo_y1"] :                             int(430)                                               节点上y的坐标
+        　　["flo_x2"] :                             int(428)                                               节点上x的坐标
+        　　["flo_y2"] :                             int(501)                                               节点上y的坐标
+        }
+        }
+        }
+        }
+        }
+        ----result-----
+        []
+    </data>
+
+    <data class="info">
+        【2】:情景属性详情接口:
+        接口路径: /api/1.0/workflow/
+        接口名称:
+        获取方式:GET
+        接口参数:prj_uid  课程id  tas_uid情景id
+        <div style="color:red">
+            数据返回格式object
+            数据接收格式object
+        </div>
+        需要提交的字段在  Request Payload
+        {calls:[
+        {url:project/:prj_uid/subprocess/:tas_uid, method:GET},    情景详情字段
+        ]}
+        eg: {calls:[
+        {url:project/92510986359194fbf441b11011577521/subprocess/53042602559263185842db4008575522, method:GET}
+        ]}
+
+        ----result-----
+        {
+        "spr_name": "情景05250203",                                     string                                      情景名称
+        "spr_synchronous": "0",                                         int                                         情景的方式  同步或者异步，0异步，1同步
+        "spr_work_description": '',                                     string                                      工作场景描述
+        "spr_learing_content": '',                                      string                                      学习内容
+        "spr_learing_target": '',                                       string                                      学习目标
+        "spr_learing_focus": '',                                        string                                      学习重点
+        "spr_advice_time": '',                                          float                                       建议时长  按照小时计算
+        "spr_vm_flag": "0",                                             int                                         是否选择虚拟机  0 否  1是
+        "spr_vm_uid": "",                                               string                                      选择虚拟机的id
+        "spr_process_flag": "0",                                        int                                         是否选择情景  0 否  1是
+        "spr_vm_info":                                                                                              情景绑定虚拟机详情
+        {
+        "spr_vm_uid": "99e3a9ed-18d1-4276-b6af-1a586fa340c9",        string                                     虚拟机组id
+        "spr_vm_name": "for debug Label",                            string                                     虚拟机名称
+        "spr_vm_user": "for debug Label",                            string                                     虚拟机使用者
+        "spr_vm_make_user": "for debug Label",                       string                                     虚拟机创建者
+        "spr_vm_create_time": "for debug Label",                     string                                     虚拟机创建时间
+        "spr_vm_network": "for debug Label",                         string                                     虚拟机网络 （虚拟机列表中的网络与组网络相同）
+        "spr_vm_preview_url": "http://abc.com ",                     string                                     虚拟机预览url
+        "spr_vm_spr_vm_list": "for debug Label",                     string                                     组中虚拟机列表
+        [
+        {
+        "vm_uid" :"99e3a9ed-18d1-4276-b6af-1a586fa340c9",    string                                     虚拟机id
+        "vm_name" :"sdsdsd ",                                string                                     虚拟机名称
+        "vm_cpu" :"99e3a9ed ",                               string                                     虚拟机cpu
+        "vm_memory" :"99e3a9ed ",                            string                                     虚拟机内存
+        "vm_os_name" :"99e3a9ed ",                           string                                     虚拟机系统名称
+        "vm_os_bits" :"99e3a9ed ",                           string                                     虚拟机系统位数
+        "vm_os_version" :"99e3a9ed ",                        string                                     虚拟机系统版本号
+        "vm_disk_size" :"99e3a9ed ",                         string                                     虚拟机硬盘大小
+        "vm_role" :"client ",                                string                                     虚拟机角色  resource功能机、client 学生机
+        "vm_used_ip" :"172.16.0.3 ",                         string                                     用户配置的ip
+        "vm_note" :"swe ",                                   string                                     标签备注
+        }
+        ]
+        }
+
+        }
+    </data>
+
+<data class="info">
+    【3】:情景列表接口:
+    接口路径: /api/1.0/workflow/
+    接口名称:
+    获取方式:GET
+    接口参数:prj_uid  课程id  tas_uid情景id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    需要提交的字段在  Request Payload
+    limit:每页显示条数    page:当前页数      (limit,page 均可为空 当page为空则显示第一页数据  当limit为空这查询全部数据)
+    {calls:[
+    {url:subprocess/:prj_uid/subpro/list, method:GET},     情景列表 ,
+    }
+    eg: {
+    calls:{url:subprocess/92510986359194fbf441b11011577521/subpro/list, method:GET}
+    }
+
+    ----result-----
+
+    {
+    "totalCount" : 10                                                     int                                    总记录数
+    "subList": [   二维数组 多条数据
+    {
+    "sp_uid": "99e3a9ed-18d1-4276-b6af-1a586fa340c9",            string                                 情景id
+    "sp_title": "for debug Label",                               string                                 情景名称
+    }
+    ]
+    }
+</data>
+
+    <data class="info">
+        【4】:虚拟机列表接口:
+        接口路径: /api/1.0/workflow/
+        接口名称:
+        获取方式:GET
+        接口参数:prj_uid  课程id  tas_uid情景id
+        <div style="color:red">
+            数据返回格式object
+            数据接收格式object
+        </div>
+        需要提交的字段在  Request Payload
+        {calls:[
+        {url:subprocess/:prj_uid/subpro/vm/list, method:GET},  虚拟机列表
+        ]}
+        eg: {
+        calls:    {url:subprocess/6095275875901b6cac40b03027581948/subpro/vm/list,method:GET},
+
+        <!--虚拟机需要提交的字段-->
+        <!--{-->
+        <!--"searchInfo":  aaa                                                      string                                  需要查询的字段 可为空-->
+        <!--}-->
+        ----result-----
+
+        {
+
+        二维数组 多条数据
+        {
+        "spr_vm_uid": "99e3a9ed-18d1-4276-b6af-1a586fa340c9",        string                                     虚拟机组id
+        "spr_vm_name": "for debug Label",                            string                                     虚拟机名称
+        "spr_vm_user": "for debug Label",                            string                                     虚拟机使用者
+        "spr_vm_make_user": "for debug Label",                       string                                     虚拟机创建者
+        "spr_vm_create_time": "for debug Label",                     string                                     虚拟机创建时间
+        "spr_vm_network": "for debug Label",                         string                                     虚拟机网络 （虚拟机列表中的网络与组网络相同）
+        "spr_vm_preview_url": "http://abc.com ",                     string                                     虚拟机预览url
+        "spr_vm_spr_vm_list": "for debug Label",                     string                                     组中虚拟机列表
+        [
+        {
+        "vm_uid" :"99e3a9ed-18d1-4276-b6af-1a586fa340c9",    string                                     虚拟机id
+        "vm_name" :"sdsdsd ",                                string                                     虚拟机名称
+        "vm_cpu" :"99e3a9ed ",                               string                                     虚拟机cpu
+        "vm_memory" :"99e3a9ed ",                            string                                     虚拟机内存
+        "vm_os_name" :"99e3a9ed ",                           string                                     虚拟机系统名称
+        "vm_os_bits" :"99e3a9ed ",                           string                                     虚拟机系统位数
+        "vm_os_version" :"99e3a9ed ",                        string                                     虚拟机系统版本号
+        "vm_disk_size" :"99e3a9ed ",                         string                                     虚拟机硬盘大小
+        "vm_role" :"99e3a9ed ",                              string                                     虚拟机角色  resource功能机、client 学生机
+        "vm_used_ip" :"172.16.0.3 ",                         string                                     用户配置的ip
+        "vm_note" :"swe ",                                   string                                     标签备注
+        }
+        ]
+        }
+        },
+    </data>
+<data class="info">
+    【5】:情景属性保存接口:
+    接口路径: /api/1.0/workflow/subprocess/:prj_uid/subprocess/:tas_uid
+    接口名称:
+    获取方式:PUT
+    接口参数:prj_uid  课程id    tas_id:情景id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    保存接口需要提交的字段在Request Payload
+    {
+    "spr_name": "情景05250203",                                         string                                      情景名称
+    "spr_synchronous": "0",                                             int                                         情景的方式  同步或者异步，0异步，1同步
+    "spr_work_description": '',                                         string                                      工作场景描述
+    "spr_learing_content": '',                                          string                                      学习内容
+    "spr_learing_target": '',                                           string                                      学习目标
+    "spr_learing_focus": '',                                            string                                      学习重点
+    "spr_advice_time": '',                                              float                                       建议时长  按照小时计算
+    "spr_vm_flag": "0",                                                 int                                         是否选择虚拟机  0 否  1是
+    "spr_vm_uid": "",                                                   string                                      选择虚拟机的id
+    "spr_process_flag": "0",                                            int                                         是否选择情景  0 否  1是
+    "spr_process_uid": " ",                                             string                                      选择情景的id
+    }
+    ----result-----
+    []
+</data>
+
+    <data class="info">
+        【6】:活动流程详情接口
+    接口路径: /api/1.0/workflow/project/{prj_uid}/processTask/{act_uid}
+    接口名称:
+    提交方式:GET
+    接口参数:prj_uid  课程id   act_uid:情景id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    ----result-----
+      {
+        ["prj_uid"] :   string(32) "92510986359194fbf441b11011577521"
+        ["diagrams"] :
+        {
+            {
+                ["dia_uid"] :      string(32) "72448789259263298e6c572053737952"
+                ["pro_uid"] :      string(32) "92510986359194fbf441b11011577521"
+                ["activities"] :   活动和情景
+                {
+                    {
+                        ["act_uid"] :                           string  "2279968265919544013fea6058991318"              活动id
+                        ["act_name"] :                          string  "活动标题"                                      活动名称
+                        ["act_type"] :                          string  "TASK"                                          类型  task(活动)
+                        ["act_task_type"] :                     string  "USERTASK"                                      活动情景中的类型
+                        ["act_loop_type"] :                     string  "EMPTY"                                         池子的类型（）
+                        ["act_start_quantity"] :                string  "1"                                             开始量
+                        ["act_completion_quantity"] :           string  "0"                                             完成量
+                        ["bou_x"] :                             int        563                                          矩形的x
+                        ["bou_y"] :                             int        259                                          矩形的y
+                        ["bou_width"] :                         int        150                                          矩形的宽
+                        ["bou_height"] :                        int        75                                           矩形的高
+                        ["bou_container"] :                     string     "bpmnDiagram"                                容器
+                        ["bou_element"] :                       string     "84186187159262508e65a59086967481"           元素id
+                        ["_extended"] :
+                        {
+                            ["extendedType"] :                  string"TASK"                                            扩展类型字段
+                        }
+                    }
+                }
+                ["events"] :  开始结束事件
+                {
+                    {
+                        ["evn_uid"] :                           string(32) "9299011235924f92d34d616076681095"           事件id
+                        ["evn_name"] :                          string(0) ""                                            事件名称
+                        ["evn_type"] :                          string(3) "END"                                         事件类型
+                        ["evn_marker"] :                        string(5) "EMPTY"                                       事件标示
+                        ["evn_is_interrupting"] :               bool(true)                                              事件是否中断
+                        ["evn_cancel_activity"] :               bool(false)                                             事件取消活动
+                        ["evn_activity_ref"] :                  string(0) ""                                            事件活动参考
+                        ["evn_wait_for_completion"] :           bool(false)                                             事件等待完成
+                        ["evn_message"] :                       string(0) ""                                            事件消息
+                        ["evn_operation_name"] :                string(0) ""                                            事件操作名
+                        ["evn_operation_implementation_ref"] :  string(0) ""                                            事件操作实现裁判
+                        ["evn_time_date"] :                     string(0) ""                                            事件日期
+                        ["evn_time_cycle"] :                    string(0) ""                                            事件循环周期
+                        ["evn_time_duration"] :                 string(0) ""                                            事件持续时间
+                        ["evn_behavior"] :                      string(5) "THROW"                                       事件行为
+                        ["bou_x"] :                             int(976)                                                矩形的x
+                        ["bou_y"] :                             int        259                                          矩形的y
+                        ["bou_width"] :                         int        150                                          矩形的宽
+                        ["bou_height"] :                        int        75                                           矩形的高
+                        ["bou_container"] :                     string     "bpmnDiagram"                                容器
+                        ["bou_element"] :                       string     "84186187159262508e65a59086967481"           元素id
+                        ["_extended"] :
+                        {
+                            ["extendedType"] :                  string"TASK"                                            扩展类型字段
+                        }
+                    }
+                }
+                ["flows"] :   关联信息
+                {
+                    {
+                        ["flo_uid"] :                            string  "158569335591ea3edd1d8f9062316600"             关联id
+                        ["flo_type"] :                           string  "SEQUENCE"                                     关联类型
+                        ["flo_name"] :                           string  " "                                            关联名称
+                        ["flo_element_origin"] :                 string  "758880615591ea3ed89d266048612976"             起点id
+                        ["flo_element_origin_type"] :            string  "bpmnGateway"                                  起点类型
+                        ["flo_element_dest"] :                   string  "716491699591ea2ba616656053196638"             终点id
+                        ["flo_element_dest_type"] :              string  "bpmnActivity"                                 终点类型
+                        ["flo_is_inmediate"] :                   bool                                                   是否是直连
+                    　　["flo_condition"] :                      string                                                 状态
+                        ["flo_state"] :                                                                                 线上节点的坐标
+                        {
+                            {
+                                ["x"] :                           int(377)
+                                ["y"] :                           int(430)
+                            }
+                            {
+                                ["x"] :                           int(377)
+                                ["y"] :                           int(465)
+                            }
+                            {
+                                ["x"] :                           int(428)
+                                ["y"] :                           int(465)
+                            }
+                            {
+                                ["x"] :                           int(428)
+                                ["y"] :                           int(501)
+                            }
+                        }
+                        ["flo_x1"] :                              int(377)                                              节点上x的坐标
+                    　　["flo_y1"] :                              int(430)                                              节点上y的坐标
+                    　　["flo_x2"] :                              int(428)                                              节点上x的坐标
+                    　　["flo_y2"] :                              int(501)                                              节点上y的坐标
+                    }
+                }
+            }
+        }
+    }
+
+
+</data>
+    <data class="info">
+        【7】:活动流程保存接口
+    接口路径: /api/1.0/workflow/project/{prj_uid}/processTask/{act_uid}
+    接口名称:
+    提交方式:put
+    接口参数:prj_uid  课程id,  act_uid  情景id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    保存接口需要提交的字段在Request Payload
+    {
+        ["prj_uid"] :   string(32) "92510986359194fbf441b11011577521"
+        ["diagrams"] :
+        {
+            {
+                ["dia_uid"] :      string(32) "72448789259263298e6c572053737952"
+                ["pro_uid"] :      string(32) "92510986359194fbf441b11011577521"
+                ["activities"] :   活动
+                {
+                    {
+                        ["act_uid"] :                           string  "2279968265919544013fea6058991318"              活动id
+                        ["act_name"] :                          string  "活动标题"                                      活动名称
+                        ["act_type"] :                          string  "TASK"                                          类型  task(活动)
+                        ["act_task_type"] :                     string  "USERTASK"                                      活动情景中的类型
+                        ["act_loop_type"] :                     string  "EMPTY"                                         池子的类型（）
+                        ["act_start_quantity"] :                string  "1"                                             开始量
+                        ["act_completion_quantity"] :           string  "0"                                             完成量
+                        ["bou_x"] :                             int        563                                          矩形的x
+                        ["bou_y"] :                             int        259                                          矩形的y
+                        ["bou_width"] :                         int        150                                          矩形的宽
+                        ["bou_height"] :                        int        75                                           矩形的高
+                        ["bou_container"] :                     string     "bpmnDiagram"                                容器
+                        ["bou_element"] :                       string     "84186187159262508e65a59086967481"           元素id
+                        ["_extended"] :
+                        {
+                            ["extendedType"] :                  string"TASK"                                            扩展类型字段
+                        }
+                    }
+                }
+                ["events"] :  开始结束事件
+                {
+                    {
+                        ["evn_uid"] :                           string(32) "9299011235924f92d34d616076681095"           事件id
+                        ["evn_name"] :                          string(0) ""                                            事件名称
+                        ["evn_type"] :                          string(3) "END"                                         事件类型
+                        ["evn_marker"] :                        string(5) "EMPTY"                                       事件标示
+                        ["evn_is_interrupting"] :               bool(true)                                              事件是否中断
+                        ["evn_cancel_activity"] :               bool(false)                                             事件取消活动
+                        ["evn_activity_ref"] :                  string(0) ""                                            事件活动参考
+                        ["evn_wait_for_completion"] :           bool(false)                                             事件等待完成
+                        ["evn_message"] :                       string(0) ""                                            事件消息
+                        ["evn_operation_name"] :                string(0) ""                                            事件操作名
+                        ["evn_operation_implementation_ref"] :  string(0) ""                                            事件操作实现裁判
+                        ["evn_time_date"] :                     string(0) ""                                            事件日期
+                        ["evn_time_cycle"] :                    string(0) ""                                            事件循环周期
+                        ["evn_time_duration"] :                 string(0) ""                                            事件持续时间
+                        ["evn_behavior"] :                      string(5) "THROW"                                       事件行为
+                        ["bou_x"] :                             int(976)                                                矩形的x
+                        ["bou_y"] :                             int        259                                          矩形的y
+                        ["bou_width"] :                         int        150                                          矩形的宽
+                        ["bou_height"] :                        int        75                                           矩形的高
+                        ["bou_container"] :                     string     "bpmnDiagram"                                容器
+                        ["bou_element"] :                       string     "84186187159262508e65a59086967481"           元素id
+                        ["_extended"] :
+                        {
+                            ["extendedType"] :                  string"TASK"                                            扩展类型字段
+                        }
+                    }
+                }
+                ["flows"] :   关联信息
+                {
+                    {
+                        ["flo_uid"] :                            string  "158569335591ea3edd1d8f9062316600"             关联id
+                        ["flo_type"] :                           string  "SEQUENCE"                                     关联类型
+                        ["flo_name"] :                           string  " "                                            关联名称
+                        ["flo_element_origin"] :                 string  "758880615591ea3ed89d266048612976"             起点id
+                        ["flo_element_origin_type"] :            string  "bpmnGateway"                                  起点类型
+                        ["flo_element_dest"] :                   string  "716491699591ea2ba616656053196638"             终点id
+                        ["flo_element_dest_type"] :              string  "bpmnActivity"                                 终点类型
+                        ["flo_is_inmediate"] :                   bool                                                   是否是直连
+                    　　["flo_condition"] :                      string                                                 状态
+                        ["flo_state"] :                                                                                 线上节点的坐标
+                        {
+                            {
+                                ["x"] :                           int(377)
+                                ["y"] :                           int(430)
+                            }
+                            {
+                                ["x"] :                           int(377)
+                                ["y"] :                           int(465)
+                            }
+                            {
+                                ["x"] :                           int(428)
+                                ["y"] :                           int(465)
+                            }
+                            {
+                                ["x"] :                           int(428)
+                                ["y"] :                           int(501)
+                            }
+                        }
+                        ["flo_x1"] :                              int(377)                                              节点上x的坐标
+                    　　["flo_y1"] :                              int(430)                                              节点上y的坐标
+                    　　["flo_x2"] :                              int(428)                                              节点上x的坐标
+                    　　["flo_y2"] :                              int(501)                                              节点上y的坐标
+                    }
+                }
+            }
+        }
+    }
+    ----result-----
+         []
+
+   【8】:活动属性详情接口:
+    接口路径: /api/1.0/workflow/
+    接口名称:
+    获取方式:GET
+    接口参数:prj_uid  课程id  tas_uid活动id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    需要提交的字段在  Request Payload
+     {calls:[{url:project/:prj_uid/activity/:tas_uid, method:GET}]}
+     eg: {calls:[{project/92510986359194fbf441b11011577521/activity/3890380855924d966d5e7f9086711789, method:GET}]}
+    ----result-----
+
+    [
+    {
+        "status": 200,
+        "response": {
+            "definition": [],                                                          array                            定义相关的内容
+
+            "properties": {
+                "taskInfo": {
+                    "tas_title": "活动222",                                            string                           活动名称
+                    "tas_description": "活动描述",                                     string                           活动描述
+                    "tas_type": "NORMAL",                                              string                           活动类型
+                    "tas_assign_type": "BALANCED",                                     string                           活动分配类型
+                    "tas_control_type": ""  ,                                          string                           条件控制类型  1条件控制 2用户控制
+                    "http_file_url": "http://aaa.com"                                  string                           http文件地址
+                    },
+                "taskSubjectMgmtList": [
+                    {
+                        "tas_con_uid": "179718017593f423e5dc6b9023368422"  ,           string                           题目id
+                        "con_control_easy_type": "1",                                  int                              题目的难易程度  1 简单，2一般，3困难
+                        "con_control_type": ""  ,                                      string                           条件类型  1单选，2多选，3问答
+                        "con_control_question": ""  ,                                  string                           题目
+                        "con_control_results": ""  ,                                    tring                           答案
+                        "con_control_options": ""  ,                                   string                           选项
+                        "con_control_update_date": ""  ,                               string                           题目更新时间
+                    },
+                    {
+                        "tas_con_uid": "",
+                        "con_control_easy_type": "",
+                        "con_control_type": "",
+                        "con_control_question": "",
+                        "con_control_results": "",
+                        "con_control_options": ""
+                        "con_control_update_date": ""
+                    }
+                ],
+                "taskDocumentList": [
+                    {
+                        "document_uid": "145236654789",                                string                           文件id
+                        "file_name": "",                                               string                           文件名称
+                        "file_type": "",                                               string                           文件类型
+                        "file_source": "1",                                            string                           图片来源  1上传， 2分享，3公共资料
+                        "file_update_date": "2017-6-09 10:12:21"                       string                           文件修改时间
+                        "http_file_url": "http://aaa.com"                              string                           http文件预览地址
+                        "file_view_url": "/bb/cc"                                      string                           文件预览地址(需要拼接http)
+                    },
+                    {
+                        "document_uid": "15423657",
+                        "file_name": "d",
+                        "file_type": "doc",
+                        "file_source": "1",
+                    }
+                ]
+                }
+            }
+        }
+    ]
+
+</data>
+    <data class="info">
+    【9】:活动属性保存接口:
+    接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid
+    接口名称:
+    获取方式:PUT
+    接口参数:prj_uid  课程id    tas_id:活动id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    保存接口需要提交的字段在Request Payload
+        {
+                definition:{}
+
+                "tas_title": "活动222",                                                string                           活动名称
+                "tas_description": "活动描述",                                         string                           活动描述
+                "tas_type": "NORMAL",                                                  string                           活动类型
+                "tas_assign_type": "BALANCED",                                         string                           活动分配类型
+                "tas_control_type": ""  ,                                              string                           条件控制类型  1条件控制 2用户控制
+                "tas_con_uid_list": [1,2,3]  ,                                         array                            选择题目id
+                "document_uid_list": [1,2,3],                                          array                            选择文件id
+
+        }
+    ----result-----
+       ----result-----
+        {
+            "status": 401,                                                              int                             状态   只有为200返回数据，其他情况是异常
+            "response": ''                                                              string                          数据信息
+            "message": '保存失败'                                                       string                          提示信息
+        }
+    or
+        {
+        "status": 200,                                                                  int                             状态   只有为200返回数据，其他情况是异常
+        "response":                                                                     string                          数据信息
+            "taskInfo": {
+                "tas_title": "活动222",                                                 string                          活动名称
+                "tas_description": "活动描述",                                          string                          活动描述
+                "tas_type": "NORMAL",                                                   string                          活动类型
+                "tas_assign_type": "BALANCED",                                          string                          活动分配类型
+                "tas_control_type": ""  ,                                               string                          条件控制类型  1条件控制 2用户控制
+                "http_file_url": "http://aaa.com"                                       string                           http文件地址
+            },
+            "taskSubjectMgmtList": [
+                {
+                    "tas_con_uid": "179718017593f423e5dc6b9023368422"  ,                string                          题目id
+                    "con_control_easy_type": "1",                                       int                             题目的难易程度  1 简单，2一般，3困难
+                    "con_control_type": ""  ,                                           string                          条件类型  1单选，2多选，3问答
+                    "con_control_question": ""  ,                                       string                          题目
+                    "con_control_results": ""  ,                                        string                          答案
+                    "con_control_options": ""  ,                                        string                          选项
+                    "con_control_update_date": ""  ,                                    string                          题目更新时间
+                },
+                {
+                    "tas_con_uid": "",
+                    "con_control_easy_type": "",
+                    "con_control_type": "",
+                    "con_control_question": "",
+                    "con_control_results": "",
+                    "con_control_options": ""
+                    "con_control_update_date": ""
+                }
+            ],
+            "taskDocumentList": [
+                {
+                    "document_uid": "145236654789",                                     string                          文件id
+                    "file_name": "",                                                    string                          文件名称
+                    "file_type": "",                                                    string                          文件类型
+                    "file_source": "1",                                                 string                          图片来源  1上传， 2分享，3公共资料
+                    "file_update_date": "2017-6-09 10:12:21"                            string                          文件修改时间
+                    "http_file_url": "http://aaa.com"                                   string                          http文件预览地址
+                    "file_view_url": "/bb/cc"                                           string                          文件预览地址(需要拼接http)
+                },
+                {
+                    "document_uid": "15423657",
+                    "file_name": "d",
+                    "file_type": "doc",
+                    "file_source": "1",
+                    "file_update_date": "2017-6-09 10:12:21"
+                    "http_file_url": "http://aaa.com"
+                    "file_view_url": "/bb/cc"
+                }
+            ]
+        "message": ''                                                                   string                          提示信息
+    }
+
+
+
+</data>
+    <data class="info">
+        【10】:活动文件上传接口:
+    接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/upload
+    接口名称:
+    获取方式:PUT
+    接口参数:prj_uid  课程id    tas_id:活动id   file: 活动文件 多个
+    <div style="color:red">
+        数据返回格式json
+        数据接收格式json
+    </div>
+    ----result-----
+        {
+            "status": 401,                                                              int                             状态   只有为200返回数据，其他情况是异常
+            "response": ''                                                              string                          数据信息
+            "message": '存储失败'                                                       string                          提示信息
+        }
+    or
+        {
+        "status": 200,                                                                  int                             状态   只有为200返回数据，其他情况是异常
+        "response":                                                                     string                          数据信息
+        [
+            {
+            "document_uid": "145236654789",                                            string                           文件id
+            "file_name": "",                                                           string                           文件名称
+            "file_type": "",                                                           string                           文件类型
+            "file_source": "1",                                                        string                           图片来源  1上传， 2分享，3公共资料
+            "create_date": "2017-6-09 10:12:21"                                        string                           绑定文件时间
+            "http_file_url": "http://aaa.com"                                          string                           http文件预览地址
+            "file_view_url": "/bb/cc"                                                  string                           文件预览地址(需要拼接http)
+            },
+            {
+            "document_uid": "15423657",
+            "file_name": "d",
+            "file_type": "doc",
+            "file_source": "1",
+            "create_date": "2017-06-13 17:15:08"
+            "http_file_url": "http://aaa.com"
+            "file_view_url": "/bb/cc"
+            }
+        ]
+        "message": ''                                                                   string                          提示信息
+    }
+
+
+
+</data>
+    <data class="info">
+        【11】:活动列表接口:
+    接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/list
+    接口名称:
+    获取方式:GET
+    接口参数:prj_uid  课程id   tas_id:活动id    page:当前页 (可为空)       limit:每页显示条数(可为空)    （limit,page 均可为空 当page为空则显示第一页数据  当limit为空这查询全部数据）
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    ----result-----
+    [
+        "taskList":
+        {
+            "tas_uid":"65820312559253acd4f2e80065591985",                             string                            活动id
+            "tas_title":"052402"                                                      string                            活动标题
+            "task_doc_num":0"                                                         int                               活动文件数  无绑定数据则为0
+            "task_con_num":5                                                          int                               活动题目数  无绑定数据则为0
+            "task_tool_temp":[]                                                       array                             活动工具列表  无绑定数据则为空数组
+                task_tool_temp字段如下:
+                "tas_uid":"65820312559253acd4f2e80065591985",                         string                            活动id
+                "tool_type":""                                                        string                            模板工具选择类型（doc,ppt,xls,edit 富文本编辑器）
+                "template_name":""                                                    string                            模板名称
+        }
+        "totalCount":                                                                 int                               数据总数
+        "taskUrl":                                                                    string                            活动列表地址
+    ]
+
+ </data>
+    <data class="info">
+        【12】:活动条件判断接口:
+    接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/check-results
+    接口名称:
+    获取方式:PUT
+    接口参数:prj_uid  课程id    tas_id:活动id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    接口需要提交的字段在Request Payload
+        {
+            "tas_con_uid": '123548s148d245698741565487411',                            string                           问题id
+            "con_control_results": a,b,                                                string                           答案
+            "skip": 'true',                                                            bool                             忽略验证
+        }
+    ----result-----
+        {
+            "status": 401,                                                              int                             状态   只有为200返回数据，其他情况是异常
+            "response": ''                                                              string                          数据信息
+            "message": '验证失败'                                                       string                          提示信息
+        }
+    or
+        {
+        "status": 200,                                                                  int                             状态   只有为200返回数据，其他情况是异常
+        "response": {                                                                   string                          数据信息
+        "nextTask":true                                                                 bool                            是否有下一条数据   false  数据为空
+        "taskInfo": {
+            "tas_title": "活动222",                                                     string                          活动名称
+            "tas_description": "活动描述",                                              string                          活动描述
+            "tas_type": "NORMAL",                                                       string                          活动类型
+            "tas_assign_type": "BALANCED",                                              string                          活动分配类型
+            "tas_control_type": ""  ,                                                   string                          条件控制类型  1条件控制 2用户控制
+            },
+        "taskSubjectMgmtList": [
+            {
+            "tas_con_uid": "179718017593f423e5dc6b9023368422"  ,                        string                          题目id
+            "con_control_easy_type": "1",                                               int                             题目的难易程度  1 简单，2一般，3困难
+            "con_control_type": ""  ,                                                   string                          条件类型  1单选，2多选，3问答
+            "con_control_question": ""  ,                                               string                          题目
+            "con_control_results": ""  ,                                                string                          答案
+            "con_control_options": ""  ,                                                string                          选项
+            },
+            {
+            "tas_con_uid": "",
+            "con_control_easy_type": "",
+            "con_control_type": "",
+            "con_control_question": "",
+            "con_control_results": "",
+            "con_control_options": ""
+            }
+        ],
+        "taskDocumentList": [
+            {
+            "document_uid": "145236654789",                                             string                          文件id
+            "file_name": "",                                                            string                          文件名称
+            "file_type": "",                                                            string                          文件类型
+            "file_source": "1",                                                         string                          图片来源  1上传， 2分享，3公共资料
+            "create_date": "2017-6-09 10:12:21"                                         string                          绑定文件时间
+            },
+            {
+            "document_uid": "15423657",
+            "file_name": "d",
+            "file_type": "doc",
+            "file_source": "1",
+            "create_date": "2017-06-13 17:15:08"
+         }
+        ]
+        }
+        "message": ''                                                                   string                          提示信息
+    }
+
+</data>
+    <data class="info">
+        【13】:文件检索接口:
+    接口路径: /sysworkflow/zh-CN/neoclassic/taskFiles/taskFiles_Ajax
+    接口名称:
+    获取方式:POST
+    接口参数:action:调用的方法   dataInfo:提交内容(json)
+    <div style="color:red">
+        数据返回格式json
+        数据接收格式json
+    </div>
+    eg:
+        action:getTaskFilesList
+        dataInfo:{
+            "page":1                                                                 int                                当前页数(可为空)
+            "limit":10                                                               int                                每页显示条数(可为空)
+            "sp_uid":12654dew645                                                     string                             情景id(可为空)
+            "prj_uid":12654dew645                                                    string                             课程id(可为空)  查询所有为all、空
+            "file_name":sdet                                                         string                             文件名称(可为空)
+            "file_type": 1                                                           int                                文件类型(可为空) 查询所有为all、空  视频:1  文档:2
+            "get_type":1                                                             int                                获取方式   1课程文件(课程id不可为空)   2:教学文件库文件
+            "tas_file_flag":false                                                    bool                               是否展示当前活动下的数据 true:不显示   false:显示  默认全部显示
+            "tas_uid":swesdsdsddwe2323                                               sring                              活动id(活动id不为空并且tas_file_flag值为false则当前活动下的数据不展示在列表中)
+            "file_type":1                                                            int                                文件类型   1视频文件(mp4)   2:文档文件('doc','docx','ppt','pdf')
+        }
+    ----result-----
+    {
+    "status": 200,                                                                     int                              状态   只有为200返回数据，其他情况是异常
+    "response": {                                                                      string                           返回数据
+        "taskFileList": [                                                              string                           文件列表
+           {
+            "document_uid": 1452,                                                      string                           活动文件id
+            "sp_uid": 145254,                                                          string                           所属情景id
+            "file_name": sdes,                                                         string                           文件名称
+            "file_type": doc,                                                          string                           文件类型
+            "file_size": 1234564878415,                                                string                           文件大小 字节
+            "file_create_date": ""  ,                                                  string                           文件创建时间
+            "file_update_date": 2017-06-05 10:21:05                                    string                           文件更新时间
+            "http_file_url": "http://aaa.com"                                          string                           http文件地址
+            "file_view_url": "/bb/cc"                                                  string                           文件预览地址(需要拼接http)
+            "tas_title": "Subpocess 1"                                                 string                           所属情景名称
+        },
+
+        ],
+        "totalCount": 5                                                                 int                             总记录数
+    },
+    "message": ""                                                                       string                          提示信息
+    }
+
+
+   【18】:题目列表接口:
+    接口路径: /sysworkflow/zh-CN/neoclassic/subjectMgmt/subjectMgmt_Ajax
+    接口名称:
+    获取方式:POST
+    接口参数:action:调用的方法   dataInfo:提交内容(json)   参数为空返回全部数据
+    <div style="color:red">
+        数据返回格式json
+        数据接收格式json
+    </div>
+    eg:
+    action:getSubjectMgmtList
+    dataInfo:{
+        "limit";10                                                                    int                               每页显示条数  可为空
+        "page";1                                                                      int                               当前页数  可为空
+        "prj_uid";"704650878593f42adea4008006541367"                                  string                            课程id  可为空
+        "sp_uid";"4856978593f42adea4008006402169"                                     string                            情景id  可为空
+        "tas_uid":swesdsdsddwe2323                                                    sring                             活动id(活动id不为空并且tas_file_flag值为false则当前活动下的数据不展示在列表中)
+        "con_control_type";"1"                                                        int                               题目类型 1:单选，2:多选，3:问答  可为空
+        "con_control_question";"s3rdsewewe"                                           string                            题目  可为空
+    }
+   ----result-----
+    {
+    "status": 200,                                                                     int                              状态   只有为200返回数据，其他情况是异常
+    "response": [                                                                      string                           返回数据
+        "subjectMgmtList":[
+        {
+            "tas_con_uid";"704650878593f42adea4008006402169"                          string                            题目id
+            "prj_uid";"704650878593f42adea4008006541367"                              string                            课程id
+            "sp_uid";"4856978593f42adea4008006402169"                                 string                            情景id
+            "con_control_easy_type";"1"                                               int                               题目难以程度  1 简单，2一般，3困难
+            "con_control_type";"1"                                                    int                               题目类型 1:单选，2:多选，3:问答
+            "con_control_question";"s3rdsewewe"                                       string                            题目
+            "con_control_results";"a,b"                                               string                            题目答案
+            "con_control_options";"{'a':'ni','b':'s'}"                                string                            选项
+            "con_control_create_date": ""  ,                                          string                            题目创建时间
+            "con_control_update_date": ""  ,                                          string                            题目更新时间
+        }
+        "totalCount" : 30                                                             int                               总条数
+        ]
+
+    ],
+    "message": "" ,                                                                   string                            提示信息
+    }
+
+
+
+
+</data>
+    <data class="info">
+        【23】:情景导出接口:
+    接口路径: /sysworkflow/zh-CN/neoclassic/designer/exportSubProcess?prj_uid=92510986359194fbf441b11011577521
+    接口名称:
+    获取方式:POST
+    接口参数:prj_uid : 课程id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+
+</data>
+    <data class="info">
+        【24】:活动导出接口:
+    接口路径:  /sysworkflow/zh-CN/neoclassic/designer/exportTask?act_uid=104614257597efde9086fb5090184775&prj_uid=92510986359194fbf441b11011577521
+    接口名称:
+    获取方式:POST
+    接口参数:prj_uid : 课程id   act_uid: 情景id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+
+
+</data>
+    <data class="info">
+        【25】:模板列表:
+    接口路径: /api/1.0/workflow/project/{prj_uid}/file-manager/listTemplates
+    接口名称:
+    获取方式:POST
+    接口参数:prj_uid : 课程id   prf_type_prj:模板获取类型   1情景   2活动  get_content: 是否获取内容  true/false;
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+     [
+        {
+            "prf_uid": "3396911625938ae7dcd96d2064933601",                                  string                      模板id
+            "prf_filename": "index.xml",                                                    string                      模板文件名称
+            "usr_uid": "00000000000000000000000000000001",                                  string                      添加模板用户id
+            "prf_update_usr_uid": "",                                                       string                      模板更新用户id
+            "prf_path": "templates\\",                                                      string                      模板目录
+            "prf_type": "file",                                                             string                      模板类型 file
+            "prf_editable": "false",                                                        string                      模板是否可编辑  true是 false否
+            "prf_create_date": "2017-06-08 09:55:09",                                       string                      模板添加时间
+            "prf_update_date": ""                                                           string                      模板更新时间,
+            "prf_content": ""                                                               string                      模板内容
+        }
+    ]
+
+
+</data>
+    <data class="info">
+    【26】:模板导入:
+    接口路径: /api/1.0/workflow/project/{prj_uid}/file-manager/importTemplates
+    接口名称:
+    获取方式:POST
+    接口参数:prj_uid : 课程id   prf_type_prj:模板导入类型   1情景   2活动       prf_file:导入的模板文件    <div style="color: red">模板导入只能是bpmn的格式  </div>
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+    接口返回格式:
+            {
+                "prf_uid": "3396911625938ae7dcd96d2064933601",                              string                      模板id
+                "prf_filename": "index.xml",                                                string                      模板文件名称
+                "usr_uid": "00000000000000000000000000000001",                              string                      添加模板用户id
+                "prf_update_usr_uid": "",                                                   string                      模板更新用户id
+                "prf_path": "templates\\",                                                  string                      模板目录
+                "prf_type": "file",                                                         string                      模板类型 file
+                "prf_editable": "false",                                                    string                      模板是否可编辑  true是 false否
+                "prf_create_date": "2017-06-08 09:55:09",                                   string                      模板添加时间
+                "prf_update_date": ""                                                       string                      模板更新时间,
+                "prf_content": ""                                                           string                      模板内容
+            }
+
+</data>
+    <data class="info">
+    【30】:模板选择接口:
+    接口路径: /api/1.0/workflow/project/{prj_uid}/file-manager/checkTemplate
+    接口名称:
+    获取方式:POST
+    接口参数:prj_uid : 课程id   prf_uid: 选择的模板id      prf_type_prj:模板获取类型   1情景   2活动    act_uid:情景id(导入活动的时候该id不为空)
+   <div style="color:red">
+       数据返回格式object
+       数据接收格式object
+   </div>
+
+</data>
+    <data class="info">
+    【32】:虚拟机详情接口:
+    接口路径: /api/1.0/workflow/
+    接口名称:
+    获取方式:GET
+    接口参数:prj_uid  课程id  spr_vm_uid 虚拟机id
+    <div style="color:red">
+        数据返回格式object
+        数据接收格式object
+    </div>
+     {calls:[
+    {url:subprocess/{prj_uid}/subpro/{spr_vm_uid}/vmInfo, method:GET},  虚拟机详情
+    ]}
+     eg: {
+    calls:    {url:subprocess/6095275875901b6cac40b03027581948/subpro/3232335234235901b6ca23541212/vminfo,method:GET},
+    ----result-----
+
+            {
+                "spr_vm_uid": "99e3a9ed-18d1-4276-b6af-1a586fa340c9",        string                                     虚拟机组id
+                "spr_vm_name": "for debug Label",                            string                                     虚拟机名称
+                "spr_vm_user": "for debug Label",                            string                                     虚拟机使用者
+                "spr_vm_make_user": "for debug Label",                       string                                     虚拟机创建者
+                "spr_vm_create_time": "for debug Label",                     string                                     虚拟机创建时间
+                "spr_vm_network": "for debug Label",                         string                                     虚拟机网络 （虚拟机列表中的网络与组网络相同）
+                "spr_vm_preview_url": "http://abc.com ",                     string                                     虚拟机预览url
+                "spr_vm_spr_vm_list": "for debug Label",                     string                                     组中虚拟机列表
+                [
+                    {
+                        "vm_uid" :"99e3a9ed-18d1-4276-b6af-1a586fa340c9",    string                                     虚拟机id
+                        "vm_name" :"sdsdsd ",                                string                                     虚拟机名称
+                        "vm_cpu" :"99e3a9ed ",                               string                                     虚拟机cpu
+                        "vm_memory" :"99e3a9ed ",                            string                                     虚拟机内存
+                        "vm_os_name" :"99e3a9ed ",                           string                                     虚拟机系统名称
+                        "vm_os_bits" :"99e3a9ed ",                           string                                     虚拟机系统位数
+                        "vm_os_version" :"99e3a9ed ",                        string                                     虚拟机系统版本号
+                        "vm_disk_size" :"99e3a9ed ",                         string                                     虚拟机硬盘大小
+                        "vm_role" :"99e3a9ed ",                              string                                     虚拟机角色  resource功能机、client 学生机
+                        "vm_used_ip" :"172.16.0.3 ",                         string                                     用户配置的ip
+                        "vm_note" :"swe ",                                   string                                     标签备注
+                    }
+                ]
+            }
+
+    <div style="color:red">
+
+
+        情景时间编辑   小时与分钟根据   /  连接
+
+
+
+    </data> <data class="info">          【50】:活动工具模板上传接口:
+        接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/tool/template
+        接口名称:
+        获取方式:POST
+        接口参数:prj_uid  课程id   tas_id:活动id
+        接口需要提交的字段在Request Payload          单条数据
+        type:文档内容(upload上传模板，new:新增内容为空模板)
+        toolTemplateFile:上传的文件接收名称(上传模板的时候字段才存在) 支持多个文件上传
+        toolType:工具类型（doc,ppt,xls,edit 富文本编辑器）
+        template_content:编辑器内容（选择edit工具类型则该字段需存在）
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                               string                           返回数据
+        "message": "" ,                                                                string                           提示信息
+        }
+        response内容如下:
+        {
+        "tool_template_uid":"",                                               string                            模板id
+        "tool_type":""                                                        string                            模板工具选择类型（doc,ppt,xls,edit 富文本编辑器）
+        "type":""                                                             string                            文档内容(upload上传模板，new:新增内容为空模板)
+        "template_name":"                                                     string                            模板名称
+        "template_size":                                                      int                               模板文件大小
+        "template_content":                                                   string                            编辑器模板内容
+        "template_preview_url":                                               string                            模板预览url
+        }
+
+    </data> <data class="info">          【51】:活动工具模板删除接口:(取消当前活动下的工具模板，所有的绑定当前模板的活动都解绑了)
+        接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/tool/template
+        接口名称:
+        获取方式:PUT
+        接口参数:prj_uid  课程id   tas_id:活动id
+        接口需要提交的字段在Request Payload           多维数组形式:多条数据
+        tool_template_uid:模板id
+        task_unbind : 其他活动绑定的模板是否解绑(默认为1)  1 是   2否
+        eg:
+        {
+        [
+        tool_template_uid: '',
+        task_unbind: '',
+        ],
+        [
+        tool_template_uid: '',
+        task_unbind: '',
+        ],
+        }
+        ----result-----
+        {
+        "status": 200,                                                                int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                              string                            返回数据
+        "message": "" ,                                                               string                            提示信息
+        }
+
+    </data> <data class="info">          【52】:修改活动工具模板属性接口:
+        接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/task/tool/template
+        接口名称:
+        获取方式:PUT
+        接口参数:prj_uid  课程id   tas_id:活动id
+        接口需要提交的字段在Request Payload           多维数组形式:多条数据
+        tool_template_uid:模板id
+        circulation_flag:模板是否流转   1流转   2不流转
+        edit_flag:模板是否编辑   1编辑   2不编辑
+
+        eg:
+        {
+        [
+        'tool_template_uid': '',
+        'type': '',
+        'template_content': '',
+        'circulation_flag': '',
+        'edit_flag': '',
+        'toolTemplateFile': '',
+        ],
+        [
+        'tool_template_uid': '',
+        'type': '',
+        'template_content': '',
+        'circulation_flag': '',
+        'edit_flag': '',
+        'toolTemplateFile': '',
+        ],
+        }
+        ----result-----
+        {
+        "status": 200,                                                                int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                              string                            返回数据
+        "message": "" ,                                                               string                            提示信息
+        }
+
+    </data> <data class="info">          【53】:活动工具模板列表接口:
+        接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/task/tool/template
+        接口名称:
+        获取方式:GET
+        接口参数:prj_uid  课程id   tas_id:活动id
+        接口需要提交的字段在Request Payload
+
+        ----result-----
+        {
+        "status": 200,                                                                int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                              string                            返回数据
+        "message": "" ,                                                               string                            提示信息
+        }
+        response内容如下:
+        {
+        "tool_template_uid":"",                                               string                            模板id
+        "circulation_flag":"",                                                int                               模板是否流转   1流转   2不流转
+        "edit_flag":"",                                                       int                               模板是否编辑   1编辑   2不编辑
+        "create_time":""                                                      int                               模板添加时间
+        "tool_type":""                                                        string                            模板工具选择类型 （doc,ppt,xls,edit 富文本编辑器）
+        "type":""                                                             string                            文档内容(upload上传模板，new:新增内容为空模板)
+        "template_name":"                                                     string                            模板名称
+        "template_size":                                                      int                               模板文件大小
+        "template_content":                                                   string                            编辑器模板内容
+        "template_preview_url":                                               string                            模板预览url
+        "origin_task_circulation_flag":                                       int                               上个活动模板是否流转   1流转   2不流转
+
+        }
+
+    </data> <data class="info">          【54】:修改活动工具模板文件属性接口:
+        接口路径: /api/1.0/workflow/project/:prj_uid/activity/:tas_uid/check/tool/template
+        接口名称:
+        获取方式:POST
+        接口参数:prj_uid  课程id   tas_id:活动id
+        接口需要提交的字段在Request Payload           单条数据
+        tool_template_uid:模板id
+        type:文档内容(upload上传模板，new:新增内容为空模板)
+        template_content:编辑器内容（选择edit工具类型则该字段需存在）
+        toolTemplateFile:上传的文件接收名称(上传模板的时候字段才存在)
+
+        ----result-----
+        {
+        "status": 200,                                                                int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                              string                            返回数据
+        "message": "" ,                                                               string                            提示信息
+        }
+
+    </div>
+
+
+
+</data>
+
+    <div style="color: #004474">
+        --------------------------------------------------------------------------processmaker_edu_api------------------------------------------------------------------------------------------------------
+    <data class="info">          【15】:文件删除接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/taskFiles/taskFiles_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:delTaskFiles
+        dataInfo:{
+        "sp_uid":12654dew645                                                      string                            情景id
+        "task_file_uid_list":[1456,123]                                           array                             文件id(数组，支持删除多个)
+        }
+        ----result-----
+        {
+        "status": 200,                                                            int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                          string                            返回数据
+        "message": "" ,                                                           string                            提示信息
+        }
+
+    </data> <data class="info">          【16】:文件更新接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/taskFiles/taskFiles_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)   task_file:替换的文件
+        eg:
+        action:upTaskFiles
+        dataInfo:{
+        "sp_uid":12654dew645                                                      string                            情景id
+        "document_uid":1456                                                       string                            文件id
+        }
+        "tas_file":                                                               file                              替换的文件
+
+        ----result-----
+        {
+        "status": 200,                                                            int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                          string                            返回数据
+        "message": "" ,                                                           string                            提示信息
+        }
+
+    </data> <data class="info">          【17】:文件下载接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/taskFiles/taskFiles_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:doWTaskFiles
+        dataInfo:{
+        "sp_uid":12654dew645                                                     string                             情景id
+        "document_uid":1456                                                      string                             文件id
+        }
+        "tas_file":                                                               file                              替换的文件
+
+        ----result-----
+        {
+        "status": 200,                                                            int                               状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                          string                            返回数据
+        "message": "" ,                                                           string                            提示信息
+        }
+
+    </data> <data class="info">          【18】:题目添加接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/subjectMgmt/subjectMgmt_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:setSubjectMgmt
+        dataInfo:{
+        "prj_uid";"704650878593f42adea4008006541367"                              string                            课程id
+        "sp_uid";"4856978593f42adea4008006402169"                                 string                            情景id
+        "con_control_easy_type";"1"                                               int                               题目难以程度  1 简单，2一般，3困难
+        "con_control_type";"1"                                                    int                               题目类型 1:单选，2:多选，3:问答
+        "con_control_question";"s3rdsewewe"                                       string                            题目
+        "con_control_results";"a,b"                                               string                            题目答案
+        "con_control_options";"{'a':'ni','b':'s'}"                                string                            选项
+        }
+        ----result-----
+        {
+        "status": 200,                                                             int                              状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                           string                           返回数据
+        "message": "" ,                                                            string                           提示信息
+        }
+
+    </data> <data class="info">          【19】:题目修改接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/subjectMgmt/subjectMgmt_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:updateSubjectMgmt
+        dataInfo:{
+        "tas_con_uid";"704650878593f42adea4008006402169"                           string                           题目id
+        "prj_uid";"704650878593f42adea4008006541367"                               string                           课程id
+        "sp_uid";"4856978593f42adea4008006402169"                                  string                           情景id
+        "con_control_easy_type";"1"                                                int                              题目难以程度  1 简单，2一般，3困难
+        "con_control_type";"1"                                                     int                              题目类型 1:单选，2:多选，3:问答
+        "con_control_question";"s3rdsewewe"                                        string                           题目
+        "con_control_results";"a,b"                                                string                           题目答案
+        "con_control_options";"{'a':'ni','b':'s'}"                                 string                           选项
+
+        }
+        ----result-----
+        {
+        "status": 200,                                                             int                              状态   只有为200返回数据，其他情况是异常
+        "response": [ ],                                                           string                           返回数据
+        "message": "" ,                                                            string                           提示信息
+        }
+
+    </data> <data class="info">          【20】:题目详情接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/subjectMgmt/subjectMgmt_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:getSubjectMgmtInfo
+        dataInfo:{
+        "tas_con_uid";"704650878593f42adea4008006402169"                           string                           题目id
+        }
+        ----result-----
+        {
+        "status": 200,                                                             int                              状态   只有为200返回数据，其他情况是异常
+        "response": [                                                              string                           返回数据
+        "tas_con_uid";"704650878593f42adea4008006402169"                           string                           题目id
+        "prj_uid";"704650878593f42adea4008006541367"                               string                           课程id
+        "sp_uid";"4856978593f42adea4008006402169"                                  string                           情景id
+        "con_control_easy_type";"1"                                                int                              题目难以程度  1 简单，2一般，3困难
+        "con_control_type";"1"                                                     int                              题目类型 1:单选，2:多选，3:问答
+        "con_control_question";"s3rdsewewe"                                        string                           题目
+        "con_control_results";"a,b"                                                string                           题目答案
+        "con_control_options";"{'a':'ni','b':'s'}"                                 string                           选项
+
+        ],
+        "message": "" ,                                                            string                           提示信息
+        }
+
+    </data> <data class="info">          【18-1】:题目列表接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/subjectMgmt/subjectMgmt_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)   参数为空返回全部数据
+        eg:
+        action:getSubjectMgmtList
+        dataInfo:{
+        "limit";10                                                                     int                              每页显示条数  可为空
+        "page";1                                                                       int                              当前页数  可为空
+        "prj_uid";"704650878593f42adea4008006541367"                                   string                           课程id  可为空
+        "sp_uid";"4856978593f42adea4008006402169"                                      string                           情景id  可为空
+        "con_control_type";"1"                                                         int                              题目类型 1:单选，2:多选，3:问答  可为空
+        "con_control_question";"s3rdsewewe"                                            string                           题目  可为空
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response": [                                                                  string                           返回数据
+        "subjectMgmtList":[
+        {
+        "tas_con_uid";"704650878593f42adea4008006402169"                           string                           题目id
+        "prj_uid";"704650878593f42adea4008006541367"                               string                           课程id
+        "sp_uid";"4856978593f42adea4008006402169"                                  string                           情景id
+        "con_control_easy_type";"1"                                                int                              题目难以程度  1 简单，2一般，3困难
+        "con_control_type";"1"                                                     int                              题目类型 1:单选，2:多选，3:问答
+        "con_control_question";"s3rdsewewe"                                        string                           题目
+        "con_control_results";"a,b"                                                string                           题目答案
+        "con_control_options";"{'a':'ni','b':'s'}"                                 string                           选项
+        "con_control_create_date": ""  ,                                           string                           题目创建时间
+        "con_control_update_date": ""  ,                                           string                           题目更新时间
+        }
+        "taskSubject" : 'http://abc.com/a/b'                                       string                           题目添加url
+        "totalCount" : 30                                                          int                              总条数
+        ]
+
+        ],
+        "message": "" ,                                                                string                           提示信息
+        }
+    </data> <data class="info">          【21】:题目删除接口:
+        接口路径: /sysworkflow/zh-CN/neoclassic/subjectMgmt/subjectMgmt_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:delSubjectMgmt
+        dataInfo:{
+        "tas_con_uid_list";['14563232874sa1554864544','14563232874sa1554864544']       array                            删除的题目id(多条)
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                 string                           返回数据
+        "message": "" ,                                                                string                           提示信息
+        }
+    </data> <data class="info">          【22】:情景列表:
+        接口路径: sysworkflow/zh-CN/neoclassic/processes/processes_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:subProcessList
+        dataInfo:{
+        "prj_uid";'14563232874sa1554864544'                                            string                           课程id
+        "salt";'14563232874sa1554864544'                                               string                           用户salt
+        "email";'aa@bb.com'                                                            string                           用户email
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                 string                           返回数据
+        {
+        'sp_uid':'14563232874sa1554864544',                                            string                           情景id
+        'sp_title':'test',                                                             string                           情景标题
+        }
+        "message": "" ,                                                                string                           提示信息
+        }
+    </data> <data class="info">          【27】:情景详情:
+        接口路径: sysworkflow/zh-CN/neoclassic/processes/processes_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:action:调用的方法   dataInfo:提交内容(json)
+        eg:
+        action:subProcessInfo
+        dataInfo:{
+        "prj_uid";'14563232874sa1554864544'                                            string                           课程id
+        "act_uid";'14563232874sa1554864544'                                            string                           情景id
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                 string                           返回数据
+        "response": {
+        "spr_name": "情景05250203",                                                string                           情景名称
+        "spr_synchronous": "0",                                                    int                              情景的方式  同步或者异步，0异步，1同步
+        "spr_work_description": '',                                                string                           工作场景描述
+        "spr_learing_content": '',                                                 string                           学习内容
+        "spr_learing_target": '',                                                  string                           学习目标
+        "spr_learing_focus": '',                                                   string                           学习重点
+        "spr_advice_time": '',                                                     string                           建议时长  按照小时计算  小时/分钟
+        "spr_vm_flag": "0",                                                        int                              是否选择虚拟机  0 否  1是
+        "spr_vm_uid": " ",                                                         string                           选择虚拟机的id
+        }
+        "message": "" ,                                                                string                           提示信息
+        }
+    </data> <data class="info">          【25】:活动列表:
+        接口路径: sysworkflow/zh-CN/neoclassic/tasks/tasks_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:function:调用的方法   oData:提交内容(json)
+        eg:
+        function:getTaskInfoList
+        oData:{
+        "prj_uid";'14563232874sa1554864544'                                        string                           课程id
+        "act_uid";'14563232874sa1554864544'                                        string                           情景id
+        "get_tool_temp_flag";'true'                                                bool                             工具列表标示
+        "get_con_num_flag";'true'                                                  bool                             活动题目数标示
+        "get_doc_num_flag";'true'                                                  bool                             活动文件数标示
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                 string                           返回数据
+        {
+        "tas_uid"                                                                  string                           当前活动id
+        "tas_title": "活动222",                                                    string                           活动名称
+        "tas_description": "活动描述",                                             string                           活动描述
+        "tas_sort_num"                                                             string                           活动顺序号
+        "task_doc_num":0"                                                          int                              活动文件数  无绑定数据则为0
+        "task_con_num":5                                                           int                              活动题目数  无绑定数据则为0
+        "task_tool_temp":[]                                                       array                             活动工具列表  无绑定数据则为空数组
+        task_tool_temp字段如下:
+        "tas_uid":"65820312559253acd4f2e80065591985",                         string                            活动id
+        "tool_type":""                                                        string                            模板工具选择类型（doc,ppt,xls,edit 富文本编辑器）
+        "template_name":""                                                    string                            模板名称
+
+        }
+        "message": "" ,                                                                string                           提示信息
+        }
+
+    </data> <data class="info">          【26】:活动详情:
+        接口路径: sysworkflow/zh-CN/neoclassic/tasks/tasks_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:function:调用的方法   oData:提交内容(json)
+        eg:
+        function:getTaskInfo
+        oData:{
+        "prj_uid";'14563232874sa1554864544'                                            string                           课程id
+        "aci_uid";'14563232874sa1554864544'                                            string                           活动id
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                 string                           返回数据
+        {
+        "tas_title": "活动222",                                                        string                           活动名称
+        "tas_description": "活动描述",                                                 string                           活动描述
+        "tas_type": "NORMAL",                                                          string                           活动类型
+        "tas_assign_type": "BALANCED",                                                 string                           活动分配类型
+        "tas_control_type": ""  ,                                                      string                           条件控制类型  1条件控制 2用户控制
+        <!--"taskSubjectMgmtList": [-->
+        <!--{-->
+        <!--"tas_con_uid": "179718017593f423e5dc6b9023368422"  ,                           string                           题目id-->
+        <!--"con_control_easy_type": "1",                                                  int                              题目的难易程度  1 简单，2一般，3困难-->
+        <!--"con_control_type": ""  ,                                                      string                           条件类型  1单选，2多选，3问答-->
+        <!--"con_control_question": ""  ,                                                  string                           题目-->
+        <!--"con_control_results": ""  ,                                                   string                           答案-->
+        <!--"con_control_options": ""  ,                                                   string                           选项-->
+        <!--},-->
+        <!--{-->
+        <!--"tas_con_uid": "",-->
+        <!--"con_control_easy_type": "",-->
+        <!--"con_control_type": "",-->
+        <!--"con_control_question": "",-->
+        <!--"con_control_results": "",-->
+        <!--"con_control_options": ""-->
+        <!--}-->
+        <!--],-->
+        <!--"taskDocumentList": [-->
+        <!--{-->
+        <!--"document_uid": "145236654789",                                                string                           文件id-->
+        <!--"file_name": "",                                                               string                           文件名称-->
+        <!--"file_type": "",                                                               string                           文件类型-->
+        <!--"file_source": "1",                                                            string                           图片来源  1上传， 2分享，3公共资料-->
+        <!--"create_date": "2017-6-09 10:12:21"                                            string                           绑定文件时间-->
+        <!--},-->
+        <!--{-->
+        <!--"document_uid": "15423657",-->
+        <!--"file_name": "d",-->
+        <!--"file_type": "doc",-->
+        <!--"file_source": "1",-->
+        <!--"create_date": "2017-06-13 17:15:08"-->
+        <!--}-->
+        <!--]-->
+        }
+        "message": "" ,                                                                string                           提示信息
+        }
+
+    </data> <data class="info">          【28】:活动下一条数据:
+        接口路径: sysworkflow/zh-CN/neoclassic/tasks/tasks_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:function:调用的方法   oData:提交内容(json)
+        eg:
+        function:getTaskFlow
+        oData:{
+        "prj_uid";'14563232874sa1554864544'                                        string                           课程id
+        "aci_uid";'14563232874sa1554864544'                                        string                           活动id
+        }
+        ----result-----
+        {
+        "status": 200,                                                                 int                              状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                 string                           返回数据
+        {
+        "flo_element_origin"                                                   string                           当前活动/开始按钮id
+        "flo_element_origin_type"                                              string                           当前活动/开始按类型
+        "flo_element_dest"                                                     string                           下一个活动id
+        "flo_element_dest_type"                                                string                           下一个活动/结束按钮类型
+        "flo_condition"
+        }
+        "message" : "",
+        }
+
+    </data> <data class="info">          【29】:活动的所属情景id数据:
+        接口路径: sysworkflow/zh-CN/neoclassic/tasks/tasks_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:function:调用的方法   oData:提交内容(json)
+        eg:
+        function:getTaskControlType
+        oData:{
+        "prj_uid";'14563232874sa1554864544'                                          string                         课程id
+        "aci_uid";'14563232874sa1554864544'                                          string                         活动id
+        }
+        ----result-----
+        {
+        "status": 200,                                                                   int                            状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                   string                         返回数据
+        {
+        "tas_control_type"                                                       string                         当前活动控制类型  1用户控制  2条件控制
+        "tas_uid"                                                                string                         当前活动id
+        }
+        "message" : "",
+        }
+
+    </data> <data class="info">          【31】:活动的所属情景id数据:
+        接口路径: sysworkflow/zh-CN/neoclassic/tasks/tasks_Ajax
+        接口名称:
+        获取方式:POST
+        接口参数:function:调用的方法   oData:提交内容(json)
+        eg:
+        function:getNextSubOrTaskFlow
+        oData:{
+        "prj_uid";'14563232874sa1554864544'                                            string                       课程id
+        "aci_uid";'14563232874sa1554864544'                                            string                       活动id
+        }
+        ----result-----
+        {
+        "status": 200,                                                                     int                          状态   只有为200返回数据，其他情况是异常
+        "response":' ,                                                                     string                       返回数据  数据都可为空
+        {
+        "type"                                                                     string                       当前活动/情景 下一条数据的类型  NORMAL:活动    SUBPROCESS:情景(只要返回是情景则当前情景结束 )
+        "act_uid"                                                                  string                       当前 活动/情景id
+        "subpro_uid"                                                               string                       当前 活动/情景 、所属情景id
+        "next_act_uid"                                                             string                       下一条数据的活动/情景id
+        "is_end"                                                                   string                       是否是结束   1:不是结束   2:是结束（是标识当前情景或者活动的下一条记录是不是结束标记）
+        "spr_vm_uid"                                                               string                       当前情景虚拟机id
+        "next_spr_vm_uid"                                                          string                       下一个情景虚拟机id
+        "tas_sort_num"                                                             string                       情景虚下的第一个活动则act_uid  为空
+        }
+        "message" : "",
+        }
+
+
+    </div>
+
+
+
+
+    =======================================================教育系统 edu    前端调用接口  ============================================================================
+
+【2】:判断是否首次添加课程接口:
+    接口路径:http://域名/my/teaching/course/first
+    获取方式:POST/GET
+    接口参数: 无
+    ----result-----
+
+    {
+        "success": true,
+        "response":
+        {
+            "status":true/false,                                                        bool                            是否是第一次添加   ture:是   false:否
+        }
+        "message":''
+    }
+    or
+    {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+    }
+
+
+【33】:关闭虚拟机接口
+    接口路径:http://域名/mgmt/preview/subProStopVm
+    获取方式:POST
+    接口参数:courseId:课程id     subProId:情景id
+    ----result-----
+
+    {
+        "success": true,
+        "response": {  }
+        "message":''
+    }
+    or
+    {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+    }
+
+</data> <data class="info">          【34】:学习界面下一步接口:
+     接口路径:http://域名/mgmt/preview/nextInfo
+     获取方式:POST
+     接口参数:courseId:课程id     actUid:活动id  情景,     <!--getNext: 是否返回下一条数据详情  1:是   2:否  默认2,-->
+     ----result-----
+
+     {
+        "success": true,
+        "response": {
+            'subTaskInfo':   没有数据则当前字段不存在
+                {
+                    "tas_uid":"45712280259827c206bfc66035133371",                     string                            活动id
+                    "tas_title":"\u6d4b\u8bd5\u6d3b\u52a80803",                       string                            活动标题
+                    "task_con_num":3,                                                 int                               活动题目个数
+                    "ques_right_num":2                                                int                               答对题目个数
+                    "ques_wrong_num":1                                                int                               答错题目个数
+                }
+            'isEnd': true/false,                                                      bool                              是否是结束   ture:是   false:否
+        }
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【35】:学习界面学习活动或情景详情接口:
+     接口路径:http://域名/mgmt/preview/getLearnSubOrTaskInfo
+     获取方式:POST
+     接口参数:courseId:课程id     subOrTaskUid:情景或活动id,
+     ----result-----
+
+     {
+        "success": true,
+        "response": {
+            'subOrTaskFlag': 1                                                  int                                     情景or活动标识   1情景    2活动
+            'leftTime' : 0                                                      int                                     情景剩余时间   秒
+            'courseTitle' : '你好'                                              string                                  课程名称
+            'subProcessInfo':{
+                "spr_name":  "你好我的测试文件"                                 string                                  情景名称
+                "spr_synchronous": "0",                                         int                                     情景的方式  同步或者异步，0异步，1同步
+                "spr_work_description": '',                                     string                                  工作场景描述
+                "spr_learing_content": '',                                      string                                  学习内容
+                "spr_learing_target": '',                                       string                                  学习目标
+                "spr_learing_focus": '',                                        string                                  学习重点
+                "spr_advice_time": '',                                          float                                   建议时长  按照小时计算
+                "spr_vm_flag": "0",                                             int                                     是否选择虚拟机  0 否  1是
+                "spr_vm_uid": "",                                               string                                  选择虚拟机的id
+                "spr_process_flag": "0",                                        int                                     是否选择情景  0 否  1是
+                "learn_status": "0",                                            int                                     情景学习状态  1 未学  2正在学  3 已完成
+
+            }
+            subOrTaskFlag==2   taskInfo/learnTask   有数据   or   taskInfo:[]   learnTask:[]
+            'taskInfo':{
+                "tas_title": "活动222",                                            string                               活动名称
+                "tas_description": "活动描述",                                     string                               活动描述
+                "tas_type": "NORMAL",                                              string                               活动类型
+                "tas_assign_type": "BALANCED",                                     string                               活动分配类型
+                "tas_control_type": ""  ,                                          string                               条件控制类型  1条件控制 2用户控制
+                "as_con_num":5                                                     int                                  题目总条数
+                "taskSubjectMgmtList": [    题目列表     活动是已学完成则当前字段不存在
+                        {
+                            "tas_con_uid": "179718017593f423e5dc6b9023368422"  ,       string                           题目id
+                            "con_control_easy_type": "1",                              int                              题目的难易程度  1 简单，2一般，3困难
+                            "con_control_type": ""  ,                                  string                           条件类型  1单选，2多选，3问答
+                            "con_control_question": ""  ,                              string                           题目
+                            "con_control_results": ""  ,                               string                           答案
+                            "con_control_options": ""  ,                               string                           选项
+                            "con_control_update_date": ""  ,                           string                           题目更新时间
+                            "con_control_learn_typ": ""  ,                             int                              题目学习状态  1未答题   2 已答题
+
+                        },
+                        {
+                            "tas_con_uid": "",
+                            "con_control_easy_type": "",
+                            "con_control_type": "",
+                            "con_control_question": "",
+                            "con_control_results": "",
+                            "con_control_options": ""
+                            "con_control_update_date": ""
+                            "con_control_learn_typ": ""  ,
+                        }
+                    ]
+            }
+            'learnTask':{
+                'number': 2                                                       int                                   活动学习完成条数
+                'total': 2                                                        int                                   活动总条数
+            }
+        }
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【34】:学习界面活动或情景属性接口:
+     接口路径:http://域名/mgmt/preview/getSubOrTaskInfo
+     获取方式:POST
+     接口参数:courseId:课程id      subOrTaskUid:情景或活动id,
+     ----result-----
+
+     {
+        "success": true,
+        "response": {
+            subOrTaskFlag': 1                                                   int                                     情景or活动标识   1情景    2活动
+            subOrTaskFlag==1   subProcessInfo   有数据   or   subProcessInfo:[]
+            'subProcessInfo':{
+                "spr_name":  "你好我的测试文件"                                 string                                  情景名称
+                "spr_synchronous": "0",                                         int                                     情景的方式  同步或者异步，0异步，1同步
+                "spr_work_description": '',                                     string                                  工作场景描述
+                "spr_learing_content": '',                                      string                                  学习内容
+                "spr_learing_target": '',                                       string                                  学习目标
+                "spr_learing_focus": '',                                        string                                  学习重点
+                "spr_advice_time": '',                                          float                                   建议时长  按照小时计算
+                "spr_vm_flag": "0",                                             int                                     是否选择虚拟机  0 否  1是
+                "spr_vm_uid": "",                                               string                                  选择虚拟机的id
+                "spr_process_flag": "0",                                        int                                     是否选择情景  0 否  1是
+            }
+            subOrTaskFlag==2   taskInfo/learnTask   有数据   or   taskInfo:[]   learnTask:[]
+            'taskInfo':{
+                "tas_title": "活动222",                                            string                               活动名称
+                "tas_description": "活动描述",                                     string                               活动描述
+                "tas_type": "NORMAL",                                              string                               活动类型
+                "tas_assign_type": "BALANCED",                                     string                               活动分配类型
+                "tas_control_type": ""  ,                                          string                               条件控制类型  1条件控制 2用户控制
+
+            }
+            'learnTask':{
+                'number': 2                                                       int                                   活动学习完成条数
+                'total': 2                                                        int                                   活动总条数
+            }
+        }
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+
+</data> <data class="info">          【35】:学习界面题目验证接口:
+     接口路径:http://域名/mgmt/question/check
+     获取方式:POST
+     接口参数:courseId:课程id      actUid:活动id, questionInfo:[{tasConUid:题目id, results:结果  选项以逗号分隔}]
+
+     ----result-----
+    {
+        "success": true,
+        "response": {
+            'task_con_finish_num':3                                                     int                             题目完成个数
+            'task_con_num'                                                              int                             题目总个数
+            'questionList'[
+               {
+                     'result': wrong/right                                              string                          题目答题结果
+                    'tas_con_uid':'sdwe546465464wee'                                    string                          题目id
+               }
+            ]
+
+        }
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+
+</data> <data class="info">          【36】: 文件管理、题目管理绑定详情接口
+     接口路径:http://域名/mgmt/index/{courseId}/getRelateTaskInfo
+     获取方式:POST
+     接口参数:courseId:课程id      is_doc_or_sub: 文件or题目  true(文件)/false(题目),  为true时:document_uid  文件id   为false时:tas_con_uid 题目id
+
+     ----result-----
+    {
+        "success": true,
+        "response": [
+            {
+                "id"]=>                                          string  "90"                                           课程列表
+                "title"=>                                        string  "test-miao(Sept                                课程名称
+                "subInfo"=> [                                                                                           情景列表
+                {
+                      "subTile" =>                               string  "Sub-process 2"                                情景名称
+                       "prjUid" =>                               string  "25817206059af9aae0ccf32001912512              情景id
+                       "task" =>[                                                                                       活动列表
+                            {
+                                'title' =>                        stirng                                                活动名称
+                            }
+                        ]
+                }
+                ]
+
+            }
+        ]
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+
+    文件管理、题目管理列表中添加返回绑定活动字段 tasNum       筛选条件中 tasRelate  true选择绑定的   false  选择未绑定的
+
+
+</data> <data class="info">          【37】: 删除课程接口
+     接口路径:http://域名/course/delCourse
+     获取方式:POST
+     接口参数:courseId:课程id
+
+     ----result-----
+    {
+        "success": true,
+        "response": [ ]
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+
+</data> <data class="info">          【38】: 添加问答接口
+     接口路径:http://域名/course/thread/{courseId}/create
+     获取方式:POST
+     接口参数:id:课程id   subProUid: 情景id    taskUid: 活动id  title: 标题   content: 内容
+
+     ----result-----
+    {
+        "success": true,
+        "response": [ ]
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【39】: 回复问答接口
+     接口路径:http://域名/course/thread/{courseId}/post/{threadId}
+     获取方式:POST
+     接口参数: courseId:课程id  threadId:问答id   content: 内容
+
+     ----result-----
+    {
+        "success": true,
+        "response": [ ]
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【40】: 笔记添加、修改接口（笔记不存在就添加存在就修改）
+     接口路径:http://域名/course/note/courseId/save
+     获取方式:POST
+     接口参数: courseId:课程id    content: 内容     subProUid: 情景id   status:笔记状态:0:私有, 1:公开   默认为0
+
+     ----result-----
+    {
+        "success": true,
+        "response": [ ]
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【41】: 修改情景结束时间接口
+     接口路径:http://域名/preview/courseId/setSubProLearnTime/{subProUid}
+     获取方式:POST
+     接口参数: subProUid: 情景id   courseId: 课程id
+
+     ----result-----
+    {
+        "success": true,
+        "response": [ ]
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【42】:eudsoho 模板导入:
+    接口路径:http://域名/mgmt/document/setTemp/{type}
+    接口名称:
+    获取方式:POST
+    接口参数:  type:模板导入类型   1情景   2活动       prf_file:导入的模板文件     模板导入是bpmn,pmx的格式
+    接口返回格式:
+     {
+        "success": true,
+        "response":
+            {
+                "prf_uid": "3396911625938ae7dcd96d2064933601",                              string                      模板id
+                "prf_filename": "index.xml",                                                string                      模板文件名称
+                "usr_uid": "00000000000000000000000000000001",                              string                      添加模板用户id
+                "prf_update_usr_uid": "",                                                   string                      模板更新用户id
+                "prf_path": "templates\\",                                                  string                      模板目录
+                "prf_type": "file",                                                         string                      模板类型 file
+                "prf_editable": "false",                                                    string                      模板是否可编辑  true是 false否
+                "prf_create_date": "2017-06-08 09:55:09",                                   string                      模板添加时间
+                "prf_update_date": ""                                                       string                      模板更新时间,
+                "prf_content": ""                                                           string                      模板内容
+            }
+
+        "message":''
+     }
+         or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【43】:学校管理教学资料库   文件上传:
+    接口路径: http://域名/materials/batch/upload
+    接口名称:
+    获取方式:POST
+    接口参数:  tas_file:替换的文件
+    eg:
+    "tas_file":                                                                       file                              上传的文件
+
+    ----result-----
+    {
+    "status": 200,                                                                     int                              状态   只有为200返回数据，其他情况是异常
+    "response": [ ],                                                                   string                           返回数据
+    "message": "" ,                                                                    string                           提示信息
+    }
+    or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【44】:我的学习-》问答回复详情:
+    接口路径: http://域名/my/questions/{threadId}/post
+    接口名称:
+    接口参数:  threadId:问答id
+
+    ----result-----
+
+      html.twig
+
+
+</data> <data class="info">          【45】:学习界面学习活动或情景 虚拟机信息:
+     接口路径:http://域名/mgmt/previews/vmInfo
+     获取方式:POST
+     接口参数:courseId:课程id     subOrTaskUid:情景或活动id,
+     ----result-----
+     {
+        "success": true,
+        "response": {
+            'vmInfo':{
+                'vm' : '',                                         string
+                'hash' :'',                                        string
+                'd'  : ''                                          string
+            }
+        }
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+
+</data> <data class="info">          【46】:更新当前进度数据展示:
+     接口路径:http://域名/admin/version/up/status
+     获取方式:GET
+     接口参数:无
+     ----result-----
+
+        返回结果为一段html代码
+
+
+</data> <data class="info">          【47】:更新接口:
+     接口路径:http://域名/admin/version/update
+     获取方式:POST
+     接口参数:type:更新方式  1立即更新，2指定时间     packagePlan: string 更新指定时间,
+     ----result-----
+     {
+        "success": true,
+        "response": {}
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【48】:定时任务编辑/删除接口:
+     接口路径:http://域名/admin/version/up/delete
+     获取方式:POST
+     接口参数:type:修改方式（ update:编辑，delete:删除 ） corntabId:定时任务id   packagePlan: string 更新指定时间,（type为update时，packagePlan不能为空）
+     ----result-----
+     {
+        "success": true,
+        "response": {}
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+
+    课程界面、情景详情界面中添加隐藏字段:
+    {#是否学习引导的标志  1未学习引导  2已学习引导#}
+    <input type="hidden" value="{{ userBootFlag }}" id = "userBootFlag"/>
+
+</data> <data class="info">          【49】:添加用户引导接口:
+     接口路径:http://域名/set/user/boot
+     获取方式:POST
+     接口参数:statusStr:学习引导的功能（ course:学习引导的课程界面，preview:学习引导的情景详情界面 ，vm:学习引导的虚拟机界面，vmpreview:学习引导详情及虚拟界面）
+     ----result-----
+     {
+        "success": true,
+        "response": {}
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【55】:学习界面添加用户工具内容接口:（主要针对的是edit模式）
+     接口路径:http://域名/mgmt/study/preview/{courseId}/settooltemp/{subProUid}/content/{taskUid}
+     获取方式:POST
+     接口参数:
+        url中参数:courseId:课程id; subProUid:情景id;  taskUid:活动id
+        data中参数:tool_template_uid:工具模板id     template_content:工具模板内容
+     ----result-----
+     {
+        "success": true,
+        "response": {}
+        "message":''
+     }
+     or
+     {
+        "status": false,
+        "response":[]
+        "message":'提示信息'
+     }
+
+</data> <data class="info">          【56】:学习界面判断用户工具是否编辑接口:
+    接口路径:http://域名/mgmt/tool/template/{courseid}/user/{taskid}/status/{tooltemplateid}
+    获取方式:GET
+    接口参数:
+    url中参数:courseid:课程id;   taskid:活动id    tooltemplateid:工具模板id
+    ----result-----  response:  status  返回值 1: 需要编辑   2:不需要编辑
+    {
+    "success": true,
+    "response":
+    {
+    'status':1                          int         是否需要编辑
+    }
+    "message":''
+    }
+    or
+    {
+    "status": false,
+    "response":[]
+    "message":'提示信息'
+    }
+</data>
+    <data class="info">
+        【57】:关注接口:
+    接口路径:http://域名/user/用户id/follow
+    获取方式:POST
+    接口参数:
+    ----result-----
+    {
+    "success": true,
+    "response": {
+    "followingCount":'0'                                             string                                     关注数
+    "followerCount":'3'                                              string                                     粉丝数
+    }
+    "message":''
+    }
+    or
+    {
+    "status": false,
+    "response":[]
+    "message":'提示信息'
+    }
+
+</data>
+    <data class="info">
+        【58】:取消关注接口:
+    接口路径:http://域名/user/用户id/unfollow
+    获取方式:POST
+    接口参数:
+    ----result-----
+    {
+    "success": true,
+    "response": {
+    "followingCount":'0'                                             string                                     关注数
+    "followerCount":'3'                                              string                                     粉丝数
+    }
+    "message":''
+    }
+    or
+    {
+    "status": false,
+    "response":[]
+    "message":'提示信息'
+    }
+
+  </data>
+    <data class="info">
+        【59】:情景活动是否可编辑接口:
+      接口路径:http://域名/course/tasksubpro/课程id/disable
+      获取方式:GET
+      接口参数:
+      ----result-----
+      {
+      "success": true,
+      "response": {
+      "taskDisable":true                                             bool                                         活动是否可编辑（true 可编辑， false  不可编辑）
+      "subProDisable":true                                           bool                                         情景是否可编辑（true 可编辑， false  不可编辑）
+      "subProUrl":''                                                 string                                       情景编辑url
+      "taskUrl":''                                                   string                                       活动编辑url
+      }
+      "message":''
+      }
+      or
+      {
+      "status": false,
+      "response": {
+      "taskDisable":false                                            bool                                         活动是否可编辑（true 可编辑， false  不可编辑）
+      "subProDisable":false                                          bool                                         情景是否可编辑（true 可编辑， false  不可编辑）
+      "subProUrl":''                                                 string                                       情景编辑url
+      "taskUrl":''                                                   string                                       活动编辑url
+      }
+      "message":'提示信息'
+      }
+
+    </data>
+</pre>
+</body>
+</html>

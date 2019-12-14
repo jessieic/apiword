@@ -1,0 +1,978 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <title>mdToHtml</title>
+            <link rel="stylesheet" media="all" href="./css/application.css">
+            <link rel="stylesheet" media="all" href="./css/print.css">
+    </head>
+    <body>
+
+        <div style="position:fixed; z-index:1;"><h3><a href="./index.html"></a></h3></div>
+        <div style="width:1000px;  margin-left: auto; margin-right: auto; margin-top: 80px; margin-bottom: 80px" class="wiki issue-realtime-trigger-pulse">
+                            <h2><strong>1.  后台-&gt;题目管理-&gt;移动到题库页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/ques_move.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_MoveView </li>
+                    <li>测试路由： /admin/question/moveview </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>2.  后台-&gt;题目管理-&gt;新建api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_Create </li>
+                    <li>测试路由： /admin/question/create/single </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;type_id&quot;: &quot;1&quot;,
+        &quot;bank_id&quot;: &quot;1&quot;,
+        &quot;hard_id&quot;: &quot;1&quot;,
+        &quot;ques_status&quot;: &quot;1&quot;,
+        &quot;ques_title&quot;: &quot;\u6cf0\u6208\u5c14\u662f\u5370\u5ea6\u8457\u540d\u4f5c\u5bb6\u3001\u8bd7\u4eba\uff0c\u4e8e1913\u5e74\u83b7\u5f97\u8bfa\u8d1d\u5c14\u6587\u5b66\u5956\uff0c\u4e3a\u5176\u8d62\u5f97\u8be5\u5956\u7684\u4f5c\u54c1\u662f&quot;,
+        &quot;optionA&quot;: &quot;\u98de\u9e1f\u96c6&quot;,
+        &quot;optionB&quot;: &quot;\u65b0\u6708\u96c6&quot;,
+        &quot;optionC&quot;: &quot;\u56ed\u4e01\u96c6&quot;,
+        &quot;optionD&quot;: &quot;\u5409\u6a80\u8fe6\u5229&quot;,
+        &quot;optionE&quot;: &quot;&quot;,
+        &quot;optionF&quot;: &quot;&quot;,
+        &quot;answer&quot;: &quot;A&quot;,
+        &quot;ques_analysis&quot;: &quot;\u6cf0\u6208\u5c14\u662f\u5370\u5ea6\u8457\u540d\u4f5c\u5bb6\u3001\u8bd7\u4eba\uff0c\u4e8e1913\u5e74\u83b7\u5f97\u8bfa\u8d1d\u5c14\u6587\u5b66\u5956\uff0c\u4e3a\u5176\u8d62\u5f97\u8be5\u5956\u7684\u4f5c\u54c1\u662f&quot;,
+        &quot;_token&quot;: &quot;Ku5wFmoU8mF0vBWGyBH5ygxkM7oZjDAx3y-skxIz04Q&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">type_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表ExamQuestionType</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">bank_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表exam_question_bank</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">hard_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联表exam_question_hard</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_status</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">状态{1:开;2:关}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_title</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionA</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项A</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionB</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项B</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionC</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项C</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionD</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项D</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionE</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项E</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionF</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项F</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">answer</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">答案</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_analysis</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题分析</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>3.  后台-&gt;题目管理-&gt;批量删除api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_BranchDel </li>
+                    <li>测试路由： /admin/question/branchdel </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;ids&quot;: [
+        &quot;16&quot;,
+        &quot;15&quot;
+    ]
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">0</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">1</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>4.  后台-&gt;题目管理-&gt;详情页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/info/ques_info_single.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_InfoView </li>
+                    <li>测试路由： /admin/question/info/32 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;ques_type&quot;: &quot;\u5355\u9009&quot;,
+    &quot;code&quot;: &quot;single&quot;,
+    &quot;ques_title&quot;: &quot;\u4e0b\u5217\u54ea\u79cd\u8bc1\u4ef6\u662f\u9a7e\u9a76\u673a\u52a8\u8f66\u4e0a\u8def\u884c\u9a76\u5e94\u5f53\u968f\u8f66\u643a\u5e26\uff1f&quot;,
+    &quot;optionA&quot;: &quot;A.\u673a\u52a8\u8f66\u767b\u8bb0\u8bc1&quot;,
+    &quot;optionB&quot;: &quot;B.\u673a\u52a8\u8f66\u4fdd\u9669\u5355&quot;,
+    &quot;optionC&quot;: &quot;C.\u673a\u52a8\u8f66\u884c\u9a76\u8bc1&quot;,
+    &quot;optionD&quot;: &quot;D.\u51fa\u5382\u5408\u683c\u8bc1\u660e&quot;,
+    &quot;answer&quot;: &quot;B&quot;,
+    &quot;ques_analysis&quot;: &quot;\u4e0b\u5217\u54ea\u79cd\u8bc1\u4ef6\u662f\u9a7e\u9a76\u673a\u52a8\u8f66\u4e0a\u8def\u884c\u9a76\u5e94\u5f53\u968f\u8f66\u643a\u5e26\uff1f&quot;,
+    &quot;ques_status&quot;: &quot;\u5f00\u542f&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">ques_type</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">code</td>
+                                    <td align="left">string</td>
+                                    <td align="left">代码</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionA</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项A</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionB</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项B</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionC</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项C</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">optionD</td>
+                                    <td align="left">string</td>
+                                    <td align="left">选项D</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">answer</td>
+                                    <td align="left">string</td>
+                                    <td align="left">答案</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_analysis</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题分析</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_status</td>
+                                    <td align="left">int</td>
+                                    <td align="left">状态{1:开;2:关}</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>5.  后台-&gt;题目管理-&gt;多选新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/new/ques_new_mulit.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_CreateView </li>
+                    <li>测试路由： /admin/question/createview/mulit </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>6.  后台-&gt;题目管理-&gt;判断新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/new/ques_new_judge.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_CreateView </li>
+                    <li>测试路由： /admin/question/createview/judge </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>7.  后台-&gt;题目管理-&gt;填空新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/new/ques_new_fillBlank.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_CreateView </li>
+                    <li>测试路由： /admin/question/createview/fillBlank </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>8.  后台-&gt;题目管理-&gt;CTF新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/new/ques_new_ctf.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_CreateView </li>
+                    <li>测试路由： /admin/question/createview/ctf </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>9.  后台-&gt;题目管理-&gt;问答新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/new/ques_new_questionAnswer.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_CreateView </li>
+                    <li>测试路由： /admin/question/createview/questionAnswer </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>10.  后台-&gt;题目管理-&gt;问答新建api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_Create </li>
+                    <li>测试路由： /admin/question/create/questionAnswer </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;type_id&quot;: &quot;5&quot;,
+        &quot;bank_id&quot;: &quot;1&quot;,
+        &quot;hard_id&quot;: &quot;1&quot;,
+        &quot;ques_status&quot;: &quot;1&quot;,
+        &quot;ques_title&quot;: &quot;\u95ee\u7b54\u9898&quot;,
+        &quot;answer&quot;: &quot;\u95ee\u7b54\u9898&quot;,
+        &quot;ques_analysis&quot;: &quot;\u95ee\u7b54\u9898&quot;,
+        &quot;_token&quot;: &quot;Ku5wFmoU8mF0vBWGyBH5ygxkM7oZjDAx3y-skxIz04Q&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">type_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表ExamQuestionType</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">bank_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表exam_question_bank</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">hard_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联表exam_question_hard</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_status</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">状态{1:开;2:关}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_title</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">answer</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">答案</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_analysis</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题分析</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>11.  后台-&gt;题目管理-&gt;首页</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/ques_index.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_IndexView </li>
+                    <li>测试路由： /admin/question/indexview </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>12.  后台-&gt;题目管理-&gt;首页列表</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_IndexList </li>
+                    <li>测试路由： /admin/question/indexlist </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;ques_title&quot;: &quot;&quot;,
+    &quot;hard_id&quot;: &quot;0&quot;,
+    &quot;type_id&quot;: &quot;0&quot;,
+    &quot;ques_status&quot;: &quot;0&quot;,
+    &quot;pageSize&quot;: &quot;15&quot;,
+    &quot;pageIndex&quot;: &quot;0&quot;
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">ques_title</td>
+                                    <td align="left">query</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">hard_id</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联表exam_question_hard</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">type_id</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表ExamQuestionType</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_status</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">状态{1:开;2:关}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageSize</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">每页数据条数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageIndex</td>
+                                    <td align="left">query</td>
+                                    <td align="left">int</td>
+                                    <td align="left">当前页起始数据</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;rowDatas&quot;: [
+        {
+            &quot;id&quot;: 39,
+            &quot;ques_status&quot;: &quot;\u5f00\u542f&quot;,
+            &quot;ques_title&quot;: &quot;\u95ee\u7b54\u9898&quot;,
+            &quot;ques_analysis&quot;: &quot;\u95ee\u7b54\u9898&quot;,
+            &quot;createtime&quot;: &quot;2018-11-12 15:57&quot;,
+            &quot;hard_id&quot;: 1,
+            &quot;bank_id&quot;: 1,
+            &quot;type_id&quot;: 5,
+            &quot;username&quot;: null,
+            &quot;title&quot;: &quot;\u9898\u5e93001&quot;,
+            &quot;hardname&quot;: &quot;\u7b80\u5355&quot;,
+            &quot;ques_type&quot;: &quot;\u95ee\u7b54&quot;,
+            &quot;type_fid&quot;: 0,
+            &quot;button&quot;: [
+                {
+                    &quot;but_router&quot;: &quot;\/admin\/question\/info\/39&quot;,
+                    &quot;but_method&quot;: &quot;href&quot;,
+                    &quot;but_title&quot;: &quot;\u67e5\u770b&quot;,
+                    &quot;class&quot;: &quot;&quot;
+                },
+                {
+                    &quot;but_router&quot;: &quot;\/admin\/question\/editview\/39&quot;,
+                    &quot;but_method&quot;: &quot;href&quot;,
+                    &quot;but_title&quot;: &quot;\u7f16\u8f91&quot;,
+                    &quot;class&quot;: &quot;&quot;
+                },
+                {
+                    &quot;but_router&quot;: &quot;\/admin\/question\/delete\/39&quot;,
+                    &quot;but_method&quot;: &quot;api&quot;,
+                    &quot;but_title&quot;: &quot;\u5220\u9664&quot;,
+                    &quot;class&quot;: &quot;&quot;
+                }
+            ]
+        }
+    ],
+    &quot;dataLength&quot;: 26,
+    &quot;pageIndex&quot;: &quot;0&quot;,
+    &quot;pageSize&quot;: &quot;15&quot;,
+    &quot;errcode&quot;: 0
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">but_router</td>
+                                    <td align="left">string</td>
+                                    <td align="left">按钮路由</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">but_method</td>
+                                    <td align="left">string</td>
+                                    <td align="left">按钮类型</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">but_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">按钮名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">class</td>
+                                    <td align="left">string</td>
+                                    <td align="left">标签class属性</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_status</td>
+                                    <td align="left">int</td>
+                                    <td align="left">状态{1:开;2:关}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_analysis</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题分析</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">createtime</td>
+                                    <td align="left">int</td>
+                                    <td align="left">创建时间</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">hard_id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联表exam_question_hard</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">bank_id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表exam_question_bank</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">type_id</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表ExamQuestionType</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">username</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">title</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">hardname</td>
+                                    <td align="left">string</td>
+                                    <td align="left">难度</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_type</td>
+                                    <td align="left">string</td>
+                                    <td align="left">名称</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">type_fid</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">dataLength</td>
+                                    <td align="left">int</td>
+                                    <td align="left">尾页</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageIndex</td>
+                                    <td align="left">int</td>
+                                    <td align="left">当前页起始数据</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">pageSize</td>
+                                    <td align="left">int</td>
+                                    <td align="left">每页数据条数</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">errcode</td>
+                                    <td align="left">int</td>
+                                    <td align="left">错误代码.0:正确</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                            <h2><strong>13.  后台-&gt;题目管理-&gt;单选新建页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/new/ques_new_single.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_CreateView </li>
+                    <li>测试路由： /admin/question/createview/single </li>
+                    <li>传参方式：<strong>GET</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>14.  后台-&gt;题目管理-&gt;编辑页面</strong></h2>
+                <ul>
+                    <li>html文件：src/ExaminationSytem/WebBundle/Resources/views/ExamQuestion/edit/ques_edit_questionAnswer.html.twig</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_EditView </li>
+                    <li>测试路由： /admin/question/editview/39 </li>
+                    <li>传参方式：<strong>PATH</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                <pre>无</pre>                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">path</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+            <pre>无</pre>                                            <h2><strong>15.  后台-&gt;题目管理-&gt;编辑api</strong></h2>
+                <ul>
+                    <li>html文件：无</li>
+                                            <li>路由常量： ExaminationSystem_Admin_Ques_Edit </li>
+                    <li>测试路由： /admin/question/edit </li>
+                    <li>传参方式：<strong>POST</strong></li>
+                    <li>传入参数结构格式</li>
+                </ul>
+                                <pre>
+<code>
+{
+    &quot;form&quot;: {
+        &quot;bank_id&quot;: &quot;1&quot;,
+        &quot;hard_id&quot;: &quot;1&quot;,
+        &quot;ques_status&quot;: &quot;1&quot;,
+        &quot;ques_title&quot;: &quot;\u6211\u4eec\u5e73\u65f6\u5e38\u8bf4\u201c\u5982\u679c\u51ac\u5929\u6765\u4e86\uff0c\u6625\u5929\u8fd8\u4f1a\u8fdc\u5417?\u201d\u8bf7\u95ee\u8fd9\u53e5\u540d\u8a00\u51fa\u81ea\u4e8e\u82f1\u56fd\u7684\u54ea\u4f4d\u4f5c\u5bb6?&quot;,
+        &quot;answer&quot;: &quot;\u6211\u4eec\u5e73\u65f6\u5e38\u8bf4\u201c\u5982\u679c\u51ac\u5929\u6765\u4e86\uff0c\u6625\u5929\u8fd8\u4f1a\u8fdc\u5417?\u201d\u8bf7\u95ee\u8fd9\u53e5\u540d\u8a00\u51fa\u81ea\u4e8e\u82f1\u56fd\u7684\u54ea\u4f4d\u4f5c\u5bb6?&quot;,
+        &quot;ques_analysis&quot;: &quot;\u6211\u4eec\u5e73\u65f6\u5e38\u8bf4\u201c\u5982\u679c\u51ac\u5929\u6765\u4e86\uff0c\u6625\u5929\u8fd8\u4f1a\u8fdc\u5417?\u201d\u8bf7\u95ee\u8fd9\u53e5\u540d\u8a00\u51fa\u81ea\u4e8e\u82f1\u56fd\u7684\u54ea\u4f4d\u4f5c\u5bb6?&quot;,
+        &quot;id&quot;: &quot;39&quot;,
+        &quot;_token&quot;: &quot;Ku5wFmoU8mF0vBWGyBH5ygxkM7oZjDAx3y-skxIz04Q&quot;
+    }
+}
+</code>
+                </pre>
+                                                    <ul><li>传入参数说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">In</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">bank_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联 表exam_question_bank</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">hard_id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">关联表exam_question_hard</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_status</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">状态{1:开;2:关}</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_title</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">题干</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">answer</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">答案</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">ques_analysis</td>
+                                    <td align="left">body</td>
+                                    <td align="left">string</td>
+                                    <td align="left">试题分析</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">id</td>
+                                    <td align="left">body</td>
+                                    <td align="left">int</td>
+                                    <td align="left">学员用户tokenId</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">_token</td>
+                                    <td align="left">body</td>
+                                    <td align="left"></td>
+                                    <td align="left"></td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                <ul>
+                    <li>返回格式例子如下：</li>
+                </ul>
+                            <pre>
+<code>
+{
+    &quot;status&quot;: 300,
+    &quot;msg&quot;: &quot;\u64cd\u4f5c\u5931\u8d25&quot;,
+    &quot;sysmsg&quot;: &quot;&quot;
+}
+</code>
+                </pre>
+                                                 
+                    <ul><li>返回参数字段说明：</li></ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="left">字段</th>
+                                <th align="left">类型</th>
+                                <th align="left">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td align="left">status</td>
+                                    <td align="left">string</td>
+                                    <td align="left">状态</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">msg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">中文错误信息</td>
+                                </tr>
+                                                            <tr>
+                                    <td align="left">sysmsg</td>
+                                    <td align="left">string</td>
+                                    <td align="left">系统错误信息，调试用</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                                </body>
+</html>
